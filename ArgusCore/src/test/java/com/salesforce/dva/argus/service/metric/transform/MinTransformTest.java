@@ -50,8 +50,8 @@ public class MinTransformTest {
     @Test(expected = UnsupportedOperationException.class)
     public void testMinTransformWithConstants() {
         Transform minTransform = new MetricReducerTransform(new MinValueReducer());
-        List<Metric> metrics = new ArrayList<Metric>();
-        List<String> constants = new ArrayList<String>(1);
+        List<Metric> metrics = new ArrayList<>();
+        List<String> constants = new ArrayList<>(1);
 
         constants.add("5");
         minTransform.transform(null, metrics, constants);
@@ -61,7 +61,7 @@ public class MinTransformTest {
     @Ignore
     public void testMinTransformWithoutMetrics() {
         Transform minTransform = new MetricReducerTransform(new MinValueReducer());
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         minTransform.transform(null, metrics);
     }
@@ -89,7 +89,7 @@ public class MinTransformTest {
 
         metric_2.setDatapoints(datapoints_2);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
@@ -129,7 +129,7 @@ public class MinTransformTest {
 
         metric_2.setDatapoints(datapoints_2);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
@@ -168,7 +168,7 @@ public class MinTransformTest {
 
         metric_2.setDatapoints(datapoints_2);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
@@ -208,7 +208,7 @@ public class MinTransformTest {
 
         metric_2.setDatapoints(datapoints_2);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
@@ -248,7 +248,7 @@ public class MinTransformTest {
 
         metric_2.setDatapoints(datapoints_2);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);

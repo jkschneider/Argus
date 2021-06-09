@@ -196,7 +196,7 @@ public class History implements Serializable, Identifiable {
             query.setParameter("entityId", jobId);
             return query.getResultList();
         } catch (NoResultException ex) {
-            return new ArrayList<History>(0);
+            return new ArrayList<>(0);
         }
     }
 
@@ -223,7 +223,7 @@ public class History implements Serializable, Identifiable {
             query.setParameter("jobStatus", jobStatus);
             return query.getResultList();
         } catch (NoResultException ex) {
-            return new ArrayList<History>(0);
+            return new ArrayList<>(0);
         }
     }
 

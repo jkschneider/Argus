@@ -90,7 +90,7 @@ public class NotifierTest {
                                 alertName,
                                 expression,
                                 "* * * * *");
-        Notification notification = new Notification("notification_name", alert, "notifier_name", new ArrayList<String>(), 23);
+        Notification notification = new Notification("notification_name", alert, "notifier_name", new ArrayList<>(), 23);
         Trigger trigger = new Trigger(alert, TriggerType.GREATER_THAN_OR_EQ, "trigger_name", 2D, 5);
 
         alert.setNotifications(Arrays.asList(new Notification[] { notification }));

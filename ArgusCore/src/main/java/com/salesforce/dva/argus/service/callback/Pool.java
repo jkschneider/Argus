@@ -120,7 +120,7 @@ public abstract class Pool<T> {
 	protected abstract T createObject();
 
 	private void initialize(final int minIdle) {
-		pool = new ConcurrentLinkedQueue<T>();
+		pool = new ConcurrentLinkedQueue<>();
 
 		for (int i = 0; i < minIdle; i++) {
 			pool.add(createObject());

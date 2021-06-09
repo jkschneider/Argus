@@ -7,7 +7,7 @@ import com.salesforce.dva.argus.entity.Metric;
 
 public class ResultSet {
 	
-	private List<Metric> _metrics = new ArrayList<Metric>();
+	private List<Metric> _metrics = new ArrayList<>();
 	
 	ResultSet(List<Metric> metrics) {
 		_metrics = metrics;

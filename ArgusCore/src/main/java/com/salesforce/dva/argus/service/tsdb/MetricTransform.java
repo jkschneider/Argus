@@ -78,7 +78,7 @@ class MetricTransform {
 		@Override
 		public ResultSet deserialize(JsonParser jp, DeserializationContext ctxt) throws IOException {
 			
-			List<Metric> metrics = new ArrayList<Metric>();
+			List<Metric> metrics = new ArrayList<>();
 			
 			JsonNode arraynode = jp.getCodec().readTree(jp);
 			Iterator<JsonNode> nodes = arraynode.elements();

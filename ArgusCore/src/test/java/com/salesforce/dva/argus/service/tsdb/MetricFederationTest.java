@@ -103,7 +103,7 @@ public class MetricFederationTest {
 	public void testEndPointFederationForkJoinSumDownsamplerWithTag() {
 		MetricService metricService = system.getServiceFactory().getMetricService();
 		List<MetricQuery> queries = metricService.getQueries("-1h:scope:metric{tagk=tagv}:sum:15m-sum");
-		List<String> readEndPoints = new ArrayList<String>();
+		List<String> readEndPoints = new ArrayList<>();
 		readEndPoints.add("http://localhost:4477");
 		readEndPoints.add("http://localhost:4488");
 
@@ -136,7 +136,7 @@ public class MetricFederationTest {
 	public void testEndPointFederationForkJoinSumDownsamplerWithNoTag() {
 		MetricService metricService = system.getServiceFactory().getMetricService();
 		List<MetricQuery> queries = metricService.getQueries("-1h:scope:metric{tagk=tagv}:sum:15m-sum");
-		List<String> readEndPoints = new ArrayList<String>();
+		List<String> readEndPoints = new ArrayList<>();
 		readEndPoints.add("http://localhost:4477");
 		readEndPoints.add("http://localhost:4488");
 
@@ -165,7 +165,7 @@ public class MetricFederationTest {
 	public void testEndPointFederationForkJoinMinDownsampler() {
 		MetricService metricService = system.getServiceFactory().getMetricService();
 		List<MetricQuery> queries = metricService.getQueries("-1h:scope:metric{tagk=tagv}:sum:15m-min");
-		List<String> readEndPoints = new ArrayList<String>();
+		List<String> readEndPoints = new ArrayList<>();
 		readEndPoints.add("http://localhost:4477");
 		readEndPoints.add("http://localhost:4488");
 
@@ -194,7 +194,7 @@ public class MetricFederationTest {
 	public void testEndPointFederationForkJoinMaxDownsampler() {
 		MetricService metricService = system.getServiceFactory().getMetricService();
 		List<MetricQuery> queries = metricService.getQueries("-1h:scope:metric{tagk=tagv}:sum:15m-max");
-		List<String> readEndPoints = new ArrayList<String>();
+		List<String> readEndPoints = new ArrayList<>();
 		readEndPoints.add("http://localhost:4477");
 		readEndPoints.add("http://localhost:4488");
 
@@ -223,7 +223,7 @@ public class MetricFederationTest {
 	public void testEndPointFederationForkJoinCountDownsampler() {
 		MetricService metricService = system.getServiceFactory().getMetricService();
 		List<MetricQuery> queries = metricService.getQueries("-1h:scope:metric{tagk=tagv}:count:15m-count");
-		List<String> readEndPoints = new ArrayList<String>();
+		List<String> readEndPoints = new ArrayList<>();
 		readEndPoints.add("http://localhost:4477");
 		readEndPoints.add("http://localhost:4488");
 
@@ -256,7 +256,7 @@ public class MetricFederationTest {
 	public void testEndPointFederationForkJoinCountDownsamplerWithNoTag() {
 		MetricService metricService = system.getServiceFactory().getMetricService();
 		List<MetricQuery> queries = metricService.getQueries("-1h:scope:metric{tagk=tagv}:count:15m-count");
-		List<String> readEndPoints = new ArrayList<String>();
+		List<String> readEndPoints = new ArrayList<>();
 		readEndPoints.add("http://localhost:4477");
 		readEndPoints.add("http://localhost:4488");
 

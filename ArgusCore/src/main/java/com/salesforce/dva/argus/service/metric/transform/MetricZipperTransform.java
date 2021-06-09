@@ -97,7 +97,7 @@ public class MetricZipperTransform implements Transform {
         
         if(metrics.size() < 2) {
           	_logger.debug( "Zipper transform requires a base metric as second param! Since this is not present, skipping the metric");
-          	return new ArrayList<Metric>();
+          	return new ArrayList<>();
         }
         
         return zip(metrics.subList(0, metrics.size() - 1), metrics.get(metrics.size() - 1));
@@ -112,7 +112,7 @@ public class MetricZipperTransform implements Transform {
      * @return  The merged metrics.
      */
     public List<Metric> zip(List<Metric> metrics, Metric baseMetric) {
-        List<Metric> zippedMetrics = new ArrayList<Metric>();
+        List<Metric> zippedMetrics = new ArrayList<>();
         if(baseMetric == null) {
             _logger.debug( "Zipper transform requires base metric as second param! Since this is null, skipping the metric");
             return zippedMetrics;

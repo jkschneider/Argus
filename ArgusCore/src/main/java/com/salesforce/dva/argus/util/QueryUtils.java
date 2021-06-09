@@ -23,7 +23,7 @@ public class QueryUtils {
 
     public static Long[] getStartAndEndTimesWithMaxInterval(QueryContext context) {
         Long[] queryStartAndEndTimes = new Long[]{0L, 0L};
-        Queue<QueryContext> bfsQueue = new LinkedList<QueryContext>();
+        Queue<QueryContext> bfsQueue = new LinkedList<>();
         if(context!=null) {
             bfsQueue.add(context);
         }
@@ -69,7 +69,7 @@ public class QueryUtils {
 
     private static List<String> getScopesFromExpression(QueryContext queryContext) {
         Set<String> scopes = new HashSet<>();
-        Queue<QueryContext> bfsQueue = new LinkedList<QueryContext>();
+        Queue<QueryContext> bfsQueue = new LinkedList<>();
         if(queryContext != null) {
             bfsQueue.add(queryContext);
         }

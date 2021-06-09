@@ -49,8 +49,8 @@ public class AverageTransformTest {
     @Test(expected = UnsupportedOperationException.class)
     public void testAverageTransformWithConstants() {
         Transform averageTransform = new MetricReducerTransform(new AverageValueReducer());
-        List<Metric> metrics = new ArrayList<Metric>();
-        List<String> constants = new ArrayList<String>(1);
+        List<Metric> metrics = new ArrayList<>();
+        List<String> constants = new ArrayList<>(1);
 
         constants.add("5");
         averageTransform.transform(null, metrics, constants);
@@ -60,7 +60,7 @@ public class AverageTransformTest {
     @Ignore
     public void testAverageTransformWithoutMetrics() {
         Transform averageTransform = new MetricReducerTransform(new AverageValueReducer());
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         averageTransform.transform(null, metrics);
     }
@@ -88,7 +88,7 @@ public class AverageTransformTest {
 
         metric_2.setDatapoints(datapoints_2);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
@@ -128,7 +128,7 @@ public class AverageTransformTest {
 
         metric_2.setDatapoints(datapoints_2);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
@@ -165,7 +165,7 @@ public class AverageTransformTest {
 
         metric_2.setDatapoints(datapoints_2);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);

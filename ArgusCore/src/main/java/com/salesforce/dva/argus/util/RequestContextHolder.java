@@ -5,7 +5,7 @@ package com.salesforce.dva.argus.util;
  */
 public class RequestContextHolder {
 
-    private static ThreadLocal<RequestContext> currentRequestContext = new ThreadLocal<RequestContext>();
+    private static ThreadLocal<RequestContext> currentRequestContext = new ThreadLocal<>();
 
     public static RequestContext getRequestContext() {
         return currentRequestContext.get();

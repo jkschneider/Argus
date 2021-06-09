@@ -50,7 +50,7 @@ public class TemplateReplacerTest {
     public void testTemplateNaming() {
         UserService userService = system.getServiceFactory().getUserService();
         Alert alert = new Alert(userService.findAdminUser(), userService.findAdminUser(), "${sCopE}-trigger_name-${MEtriC}-trigger_metric-${tag.tag1}-trigger_tag1-${tag.tag2}-trigger_tag2-${tag.TAg3}-${tag.tAg2}-${device}-${device}", expression, "* * * * *");
-        Notification notification = new Notification("notification_name", alert, "notifier_name", new ArrayList<String>(), 23);
+        Notification notification = new Notification("notification_name", alert, "notifier_name", new ArrayList<>(), 23);
         Trigger trigger = new Trigger(alert, Trigger.TriggerType.GREATER_THAN_OR_EQ, "${sCopE}-trigger_name-${MEtriC}-trigger_metric-${tag.tag1}-trigger_tag1-${tag.tag2}-trigger_tag2-${tag.tag3}-${tag.tAg2}", 2D, 5);
 
         alert.setNotifications(Arrays.asList(new Notification[] { notification }));
@@ -81,7 +81,7 @@ public class TemplateReplacerTest {
 
         UserService userService = system.getServiceFactory().getUserService();
         Alert alert = new Alert(userService.findAdminUser(), userService.findAdminUser(), "alert_name-${mETRIc}", expression, "* * * * *");
-        Notification notification = new Notification("notification_name-${tag.tAg}", alert, "notifier_name", new ArrayList<String>(), 23);
+        Notification notification = new Notification("notification_name-${tag.tAg}", alert, "notifier_name", new ArrayList<>(), 23);
         Trigger trigger = new Trigger(alert, Trigger.TriggerType.GREATER_THAN_OR_EQ, "${sCopE}-trigger_name", 2D, 7D,5);
 
         alert.setNotifications(Arrays.asList(new Notification[] { notification }));
@@ -142,7 +142,7 @@ public class TemplateReplacerTest {
                                 alertName,
                                 expression,
                                 "* * * * *");
-        Notification notification = new Notification("notification_name", alert, "notifier_name", new ArrayList<String>(), 23);
+        Notification notification = new Notification("notification_name", alert, "notifier_name", new ArrayList<>(), 23);
         Trigger trigger = new Trigger(alert, Trigger.TriggerType.GREATER_THAN_OR_EQ, "trigger_name", 2D, 7.1D,5);
 
         alert.setNotifications(Arrays.asList(new Notification[] { notification }));
@@ -181,7 +181,7 @@ public class TemplateReplacerTest {
     public void testCornerCases() {
         UserService userService = system.getServiceFactory().getUserService();
         Alert alert = new Alert(userService.findAdminUser(), userService.findAdminUser(), "${alert.name}", expression, "* * * * *");
-        Notification notification = new Notification("${notification.name}", alert, "notifier_name", new ArrayList<String>(), 23);
+        Notification notification = new Notification("${notification.name}", alert, "notifier_name", new ArrayList<>(), 23);
         Trigger trigger = new Trigger(alert, Trigger.TriggerType.GREATER_THAN_OR_EQ, "${trigger.name}", 2D, 7.1D,5);
 
         alert.setNotifications(Arrays.asList(new Notification[] { notification }));

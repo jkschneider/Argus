@@ -65,8 +65,8 @@ public class MetricReducerOrMappingTransform implements Transform {
 	protected static String FULLJOIN = "UNION";
 	protected static String INTERSECT = "INTERSECT";
 	protected Boolean fulljoinIndicator=true;
-	public static final Set<Class> DEFAULT_FULL_JOIN_EXCLUDE_CLASSES = new HashSet<Class>(Arrays.asList(new Class[] {DivideValueReducerOrMapping.class, DiffValueReducerOrMapping.class, DeviationValueReducerOrMapping.class, ScaleValueReducerOrMapping.class}));
-	public static final Set<Class> DEFAULT_CONSTANT_VALUE_INCLUDE_CLASSES = new HashSet<Class>(Arrays.asList(new Class[] {DivideValueReducerOrMapping.class}));
+	public static final Set<Class> DEFAULT_FULL_JOIN_EXCLUDE_CLASSES = new HashSet<>(Arrays.asList(new Class[] {DivideValueReducerOrMapping.class, DiffValueReducerOrMapping.class, DeviationValueReducerOrMapping.class, ScaleValueReducerOrMapping.class}));
+	public static final Set<Class> DEFAULT_CONSTANT_VALUE_INCLUDE_CLASSES = new HashSet<>(Arrays.asList(new Class[] {DivideValueReducerOrMapping.class}));
 
 
 	//~ Constructors *********************************************************************************************************************************
@@ -145,7 +145,7 @@ public class MetricReducerOrMappingTransform implements Transform {
 			return metrics;
 		}
 
-		List<Metric> newMetricsList = new ArrayList<Metric>();
+		List<Metric> newMetricsList = new ArrayList<>();
 
 		for (Metric metric : metrics) {
 			metric.setDatapoints(this.valueReducerOrMapping.mapping(metric.getDatapoints(), constants));
@@ -243,7 +243,7 @@ public class MetricReducerOrMappingTransform implements Transform {
 		for (Metric metric : metrics) {
 			for (Map.Entry<Long, Double> point : metric.getDatapoints().entrySet()) {
 				if (!collated.containsKey(point.getKey())) {
-					collated.put(point.getKey(), new ArrayList<Double>());
+					collated.put(point.getKey(), new ArrayList<>());
 				}
 				collated.get(point.getKey()).add(point.getValue());
 			}

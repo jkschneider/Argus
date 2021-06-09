@@ -53,7 +53,7 @@ public class AnomalySTLTransform implements Transform {
 
     @Override
     public List<Metric> transform(QueryContext context, List<Metric> metrics) {
-        List<String> l = new ArrayList<String>();
+        List<String> l = new ArrayList<>();
         int size = metrics.get(0).getDatapoints().size();
         if (size >= 52 * 2) {
             l.add(0, "52");

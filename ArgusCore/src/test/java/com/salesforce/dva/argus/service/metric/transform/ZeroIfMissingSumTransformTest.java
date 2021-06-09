@@ -61,7 +61,7 @@ public class ZeroIfMissingSumTransformTest {
         metric.setTag("user", "user1");
         metric.setTag("host", "host1");
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
         datapoints = new HashMap<>();
@@ -104,7 +104,7 @@ public class ZeroIfMissingSumTransformTest {
         metric.setDatapoints(datapoints);
         metric.setTag("user", "user1");
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
         datapoints = new HashMap<>();
@@ -134,7 +134,7 @@ public class ZeroIfMissingSumTransformTest {
         metric.setDatapoints(datapoints);
         metric.setTag("user", "user1");
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
         datapoints = new HashMap<>();
@@ -166,7 +166,7 @@ public class ZeroIfMissingSumTransformTest {
         metric.setDatapoints(datapoints);
         metric.setTag("user", "user1");
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
@@ -182,7 +182,7 @@ public class ZeroIfMissingSumTransformTest {
 
     @Test
     public void transform_ShouldReturnEmptyListWhenMetricIsEmpty() {
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
         List<Metric> result = new ZeroIfMissingSum().transform(null, metrics);
 
         assertEquals(0, result.size());

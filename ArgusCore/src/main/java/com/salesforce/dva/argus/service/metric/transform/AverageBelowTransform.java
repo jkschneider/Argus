@@ -70,7 +70,7 @@ public class AverageBelowTransform implements Transform {
             throw new SystemException("Illegal constant value supplied to average below transform", nfe);
         }
 
-        List<Metric> result = new ArrayList<Metric>(metrics.size());
+        List<Metric> result = new ArrayList<>(metrics.size());
 
         for (Metric metric : metrics) {
             if (calculateAverage(metric.getDatapoints()) < value) {

@@ -60,7 +60,7 @@ public class IncludeTransform implements Transform {
             "Include transform require regex, only exactly one constant allowed.");
         SystemAssert.requireArgument(!constants.get(0).equals(""), "Expression can't be an empty string");
 
-        List<Metric> includeMetricList = new ArrayList<Metric>();
+        List<Metric> includeMetricList = new ArrayList<>();
         String expr = constants.get(0);
 
         for (Metric metric : metrics) {

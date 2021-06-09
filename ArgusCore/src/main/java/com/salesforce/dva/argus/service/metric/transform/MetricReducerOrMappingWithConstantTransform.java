@@ -83,7 +83,7 @@ public class MetricReducerOrMappingWithConstantTransform extends MetricReducerOr
 			return metrics;
 		}
 
-		List<Metric> result = new ArrayList<Metric>();
+		List<Metric> result = new ArrayList<>();
 
 		if (constants.size() == 1) {
 			result = Arrays.asList(reduce(metrics, constants));

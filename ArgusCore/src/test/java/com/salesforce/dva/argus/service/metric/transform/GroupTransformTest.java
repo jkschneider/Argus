@@ -75,11 +75,11 @@ public class GroupTransformTest {
 
         metric.setDatapoints(datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>(0);
+        List<String> constants = new ArrayList<>(0);
 
         groupTransform.transform(null, metrics, constants);
     }
@@ -130,13 +130,13 @@ public class GroupTransformTest {
         metric_3.setNamespace(TEST_METRIC_NAME_BAD);
         metric_3.setDatapoints(datapoints_3);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
         metrics.add(metric_3);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add(TEST_METRIC_NAME_LITERAL);
         constants.add(TEST_METRIC_TYPE_INCLUSIVE);
@@ -191,13 +191,13 @@ public class GroupTransformTest {
         metric_3.setNamespace(TEST_METRIC_NAME_BAD);
         metric_3.setDatapoints(datapoints_3);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
         metrics.add(metric_3);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add(TEST_METRIC_NAME_REGEX);
         constants.add(TEST_METRIC_TYPE_EXCLUSIVE);
@@ -252,13 +252,13 @@ public class GroupTransformTest {
         metric_3.setNamespace(TEST_METRIC_NAME_BAD);
         metric_3.setDatapoints(datapoints_3);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
         metrics.add(metric_3);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add(TEST_METRIC_NAME_LITERAL);
         constants.add(TEST_METRIC_TYPE_INCLUSIVE);
@@ -316,13 +316,13 @@ public class GroupTransformTest {
         metric_3.setNamespace(TEST_METRIC_NAME_BAD);
         metric_3.setDatapoints(datapoints_3);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
         metrics.add(metric_3);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add(TEST_METRIC_NAME_REGEX);
         constants.add(TEST_METRIC_TYPE_EXCLUSIVE);
@@ -377,13 +377,13 @@ public class GroupTransformTest {
         metric_3.setNamespace(TEST_METRIC_NAME_BAD);
         metric_3.setDatapoints(datapoints_3);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
         metrics.add(metric_3);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add(TEST_METRIC_NAME_LITERAL);
         constants.add(TEST_METRIC_TYPE_INCLUSIVE);
@@ -440,13 +440,13 @@ public class GroupTransformTest {
         metric_3.setNamespace(TEST_METRIC_NAME_BAD);
         metric_3.setDatapoints(datapoints_3);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
         metrics.add(metric_3);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add(TEST_METRIC_NAME_REGEX);
         constants.add(TEST_METRIC_TYPE_EXCLUSIVE);
@@ -478,11 +478,11 @@ public class GroupTransformTest {
         metric_1.setTags(TEST_TAGS);
         metric_1.setDatapoints(datapoints_1);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add(TEST_METRIC_NAME_LITERAL);
         constants.add(TEST_METRIC_TYPE_INCLUSIVE);
@@ -514,11 +514,11 @@ public class GroupTransformTest {
         metric_1.setNamespace(TEST_NAMESPACE);
         metric_1.setTags(TEST_TAGS);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add(TEST_METRIC_NAME_REGEX);
         constants.add(TEST_METRIC_TYPE_EXCLUSIVE);

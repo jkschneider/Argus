@@ -92,7 +92,7 @@ public class Cron {
 
 		String tmpCron = "0 " + cronEntry.trim();
 
-		List<String> parts = new ArrayList<String>(Arrays.asList(tmpCron.split("\\s+")));
+		List<String> parts = new ArrayList<>(Arrays.asList(tmpCron.split("\\s+")));
 		if (parts.size() < 5 || parts.size() > 7 )
 		{
 			throw new RuntimeException("Invalid input cron expression: " + cronEntry + ", too many or too few fields");

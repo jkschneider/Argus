@@ -57,11 +57,11 @@ public class DivideTransformTest {
 
         metric.setDatapoints(datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>(1);
+        List<String> constants = new ArrayList<>(1);
 
 
         constants.add("5w");
@@ -79,11 +79,11 @@ public class DivideTransformTest {
 
         metric.setDatapoints(datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>(1);
+        List<String> constants = new ArrayList<>(1);
 
         constants.add("0");
         divideTransform.transform(null, metrics, constants);
@@ -93,7 +93,7 @@ public class DivideTransformTest {
     public void testDivideTransformWithoutMetrics() {
         Transform divideTransform = new MetricReducerOrMappingTransform(new DivideValueReducerOrMapping());
         List<Metric> metrics = null;
-        List<String> constants = new ArrayList<String>(1);
+        List<String> constants = new ArrayList<>(1);
 
         constants.add("5");
         divideTransform.transform(null, metrics, constants);
@@ -112,11 +112,11 @@ public class DivideTransformTest {
 
         metric.setDatapoints(datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>(1);
+        List<String> constants = new ArrayList<>(1);
 
         constants.add("5");
 
@@ -155,12 +155,12 @@ public class DivideTransformTest {
 
         metric_2.setDatapoints(datapoints_2);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
 
-        List<String> constants = new ArrayList<String>(1);
+        List<String> constants = new ArrayList<>(1);
 
         constants.add("5");
 
@@ -188,11 +188,11 @@ public class DivideTransformTest {
     public void testDivideTransformWithTwoConstants() {
         Transform divideTransform = new MetricReducerOrMappingTransform(new DivideValueReducerOrMapping());
         Metric metric = new Metric(TEST_SCOPE, TEST_METRIC);
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("5");
         constants.add("10");
@@ -221,12 +221,12 @@ public class DivideTransformTest {
 
         metric_2.setDatapoints(datapoints_2);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
 
-        List<String> constants = new ArrayList<String>(1);
+        List<String> constants = new ArrayList<>(1);
 
         constants.add("union");
         constants.add("abc");
@@ -257,12 +257,12 @@ public class DivideTransformTest {
 
         metric_2.setDatapoints(datapoints_2);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
         constants.add("union");
         constants.add("2");
         Map<Long, Double> expected = new HashMap<Long, Double>();
@@ -295,12 +295,12 @@ public class DivideTransformTest {
 
         metric_2.setDatapoints(datapoints_2);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
         constants.add("union");
         constants.add("2");
         Map<Long, Double> expected = new HashMap<Long, Double>();
@@ -335,12 +335,12 @@ public class DivideTransformTest {
 
         metric_2.setDatapoints(datapoints_2);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         List<Metric> result = divideTransform.transform(null, metrics, constants);
         Map<Long, Double> expected = new HashMap<Long, Double>();
@@ -374,12 +374,12 @@ public class DivideTransformTest {
 
         metric_2.setDatapoints(datapoints_2);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
         Map<Long, Double> expected = new HashMap<Long, Double>();
 
         expected.put(1000L, 0.1);
@@ -415,12 +415,12 @@ public class DivideTransformTest {
 
         metric_2.setDatapoints(datapoints_2);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
         Map<Long, Double> expected = new HashMap<Long, Double>();
         List<Metric> result = divideTransform.transform(null, metrics, constants);
 
@@ -451,12 +451,12 @@ public class DivideTransformTest {
 
         metric_2.setDatapoints(datapoints_2);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
 
-        List<String> constants = new ArrayList<String>(1);
+        List<String> constants = new ArrayList<>(1);
         Map<Long, Double> expected = new HashMap<Long, Double>();
 
         expected.put(3000L, 0.003);
@@ -492,12 +492,12 @@ public class DivideTransformTest {
 
         metric_2.setDatapoints(datapoints_2);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
         constants.add("union");
         Map<Long, Double> expected = new HashMap<Long, Double>();
         expected.put(100L, 10.0);
@@ -522,7 +522,7 @@ public class DivideTransformTest {
         Metric metric_1 = new Metric(TEST_SCOPE, TEST_METRIC);
         metric_1.setDatapoints(datapoints_1);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
         metrics.add(metric_1);
 
         divideTransform.transform(null, metrics);
@@ -539,11 +539,11 @@ public class DivideTransformTest {
 
         Metric metric_1 = new Metric(TEST_SCOPE, TEST_METRIC);
         metric_1.setDatapoints(datapoints_1);
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
         constants.add("union");
         constants.add("12");
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
         metrics.add(metric_1);
         Map<Long, Double> expected = new HashMap<Long, Double>();
         expected.put(1000L, 12.0);
@@ -566,10 +566,10 @@ public class DivideTransformTest {
 
         Metric metric_1 = new Metric(TEST_SCOPE, TEST_METRIC);
         metric_1.setDatapoints(datapoints_1);
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
         constants.add("union");
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
         metrics.add(metric_1);
         List<Metric> result = divideTransform.transform(null, metrics, constants);
     }
@@ -586,10 +586,10 @@ public class DivideTransformTest {
         Metric metric_1 = new Metric(TEST_SCOPE, TEST_METRIC);
         metric_1.setDatapoints(datapoints_1);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
         constants.add("2");
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
         metrics.add(metric_1);
 
         Map<Long, Double> expected = new HashMap<Long, Double>();

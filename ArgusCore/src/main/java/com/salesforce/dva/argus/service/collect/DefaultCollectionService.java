@@ -216,7 +216,7 @@ public class DefaultCollectionService extends DefaultJPAService implements Colle
 
         CollectionType type = new ObjectMapper().getTypeFactory().constructCollectionType(ArrayList.class, Metric.class);
         List<ArrayList<Metric>> dequeuedMessages = _mqService.dequeue(METRIC.getQueueName(), type, timeout, messageCount);
-        List<Metric> dequeued = new ArrayList<Metric>();
+        List<Metric> dequeued = new ArrayList<>();
 
         for (List<Metric> list : dequeuedMessages) {
             dequeued.addAll(list);
@@ -236,7 +236,7 @@ public class DefaultCollectionService extends DefaultJPAService implements Colle
 
         CollectionType type = new ObjectMapper().getTypeFactory().constructCollectionType(ArrayList.class, Metric.class);
         List<ArrayList<Metric>> dequeuedMessages = _mqService.dequeue(METRIC.getQueueName(), type, timeout, messageCount);
-        List<Metric> dequeued = new ArrayList<Metric>();
+        List<Metric> dequeued = new ArrayList<>();
 
         for (List<Metric> list : dequeuedMessages) {
             dequeued.addAll(list);
@@ -372,7 +372,7 @@ public class DefaultCollectionService extends DefaultJPAService implements Colle
                 metricList = metricCategoryMap.get(metricCategory);
                 metricList.addAll(metric.getDatapoints().keySet());
             } else {
-                metricCategoryMap.put(metricCategory, new ArrayList<Long>(metric.getDatapoints().keySet()));
+                metricCategoryMap.put(metricCategory, new ArrayList<>(metric.getDatapoints().keySet()));
             }
         }
 
@@ -406,7 +406,7 @@ public class DefaultCollectionService extends DefaultJPAService implements Colle
     }
 
     private List<Metric> _getAllowedMetrics(List<Metric> metrics, PrincipalUser submitter) {
-        List<Metric> allowedMetrics = new ArrayList<Metric>(metrics.size());
+        List<Metric> allowedMetrics = new ArrayList<>(metrics.size());
 
         for (Metric m : metrics) {
             if (_namespaceService.isPermitted(m.getNamespace(), submitter)) {
@@ -417,15 +417,15 @@ public class DefaultCollectionService extends DefaultJPAService implements Colle
     }
 
     private List<ArrayList<Metric>> _batchMetrics(List<Metric> metrics) {
-        List<ArrayList<Metric>> batches = new ArrayList<ArrayList<Metric>>();
+        List<ArrayList<Metric>> batches = new ArrayList<>();
         int count = 0;
-        ArrayList<Metric> batch = new ArrayList<Metric>(BATCH_METRICS);
+        ArrayList<Metric> batch = new ArrayList<>(BATCH_METRICS);
 
         for (Metric metric : metrics) {
             if (count == BATCH_METRICS) {
                 count = 0;
                 batches.add(batch);
-                batch = new ArrayList<Metric>(BATCH_METRICS);
+                batch = new ArrayList<>(BATCH_METRICS);
             }
 
             /*

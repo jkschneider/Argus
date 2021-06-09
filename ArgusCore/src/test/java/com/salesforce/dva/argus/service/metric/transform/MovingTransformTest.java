@@ -72,11 +72,11 @@ public class MovingTransformTest {
 
         metric.setDatapoints(datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>(1);
+        List<String> constants = new ArrayList<>(1);
 
         constants.add("2s");
 
@@ -113,11 +113,11 @@ public class MovingTransformTest {
 
         metric.setDatapoints(datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>(1);
+        List<String> constants = new ArrayList<>(1);
 
         constants.add("2s");
         constants.add("median");
@@ -155,11 +155,11 @@ public class MovingTransformTest {
 
         metric.setDatapoints(datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>(1);
+        List<String> constants = new ArrayList<>(1);
 
         constants.add("2s");
         constants.add("sum");
@@ -197,11 +197,11 @@ public class MovingTransformTest {
 
         metric.setDatapoints(datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>(1);
+        List<String> constants = new ArrayList<>(1);
 
         constants.add("2s");
         constants.add("avg");
@@ -239,11 +239,11 @@ public class MovingTransformTest {
 
         metric.setDatapoints(datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>(1);
+        List<String> constants = new ArrayList<>(1);
 
         constants.add("2s");
         constants.add("median");
@@ -273,11 +273,11 @@ public class MovingTransformTest {
 
         metric.setDatapoints(datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>(1);
+        List<String> constants = new ArrayList<>(1);
 
         constants.add("120s");
         constants.add("avg");
@@ -303,11 +303,11 @@ public class MovingTransformTest {
 
         metric.setDatapoints(datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>(1);
+        List<String> constants = new ArrayList<>(1);
 
         constants.add("120s");
         constants.add("avg");
@@ -320,7 +320,7 @@ public class MovingTransformTest {
 
     @Test(expected = UnsupportedOperationException.class)
     public void transform_ShouldThrowUnsupportedOperationExceptionWhenNoConstantsAreSpecified() {
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(new Metric(TEST_SCOPE, TEST_METRIC));
 
@@ -331,25 +331,25 @@ public class MovingTransformTest {
     
     @Test(expected = IllegalArgumentException.class)
     public void transform_ShouldThrowIllegalArgumentExceptionWhenNoWindowSizeIsSpecified() {
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(new Metric(TEST_SCOPE, TEST_METRIC));
 
         Transform movingTransform = new MetricMappingTransform(new MovingValueMapping());
         
-        List<String> constants = new ArrayList<String>(1);
+        List<String> constants = new ArrayList<>(1);
 
         movingTransform.transform(null, metrics, constants);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void transform_ShouldThrowIllegalArgumentExceptionWhenTypeIsInvalid() {
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(new Metric(TEST_SCOPE, TEST_METRIC));
 
         Transform movingTransform = new MetricMappingTransform(new MovingValueMapping());
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("2");
         constants.add("foobar");

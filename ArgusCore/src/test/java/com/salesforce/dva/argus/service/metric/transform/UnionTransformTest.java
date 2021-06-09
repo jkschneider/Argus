@@ -56,11 +56,11 @@ public class UnionTransformTest {
 
         metric.setDatapoints(datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>(1);
+        List<String> constants = new ArrayList<>(1);
 
         unionTransform.transform(null, metrics, constants);
     }
@@ -96,7 +96,7 @@ public class UnionTransformTest {
 
         metric_2.setDatapoints(datapoints_2);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
@@ -136,7 +136,7 @@ public class UnionTransformTest {
 
         metric_2.setDatapoints(datapoints_2);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
@@ -179,7 +179,7 @@ public class UnionTransformTest {
 
         metric_2.setDatapoints(datapoints_2);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
@@ -211,7 +211,7 @@ public class UnionTransformTest {
 
         metric_1.setDatapoints(datapoints_1);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
 
@@ -250,7 +250,7 @@ public class UnionTransformTest {
 
         metric_2.setDatapoints(datapoints_2);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);

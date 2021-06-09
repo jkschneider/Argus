@@ -56,11 +56,11 @@ public class FillTransformTest {
     public void testFillTransformWithoutConstants() {
         Transform fillTransform = new FillTransform();
         Metric metric = new Metric(TEST_SCOPE, TEST_METRIC);
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         fillTransform.transform(null, metrics, constants);
     }
@@ -69,11 +69,11 @@ public class FillTransformTest {
     public void testFillWithMetricTransformWithIncorrectNumOfConstants() {
         Transform fillTransform = new FillTransform();
         Metric metric = new Metric(TEST_SCOPE, TEST_METRIC);
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         fillTransform.transform(null, metrics, constants);
     }
@@ -82,11 +82,11 @@ public class FillTransformTest {
     public void testFillWithMetricTransformWithInvalidIntervalFormat() {
         Transform fillTransform = new FillTransform();
         Metric metric = new Metric(TEST_SCOPE, TEST_METRIC);
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
         constants.add("1w");
         constants.add("2s");
         constants.add("100.0");
@@ -100,11 +100,11 @@ public class FillTransformTest {
     public void testFillWithMetricTransformWithInvalidIntervalValue() {
         Transform fillTransform = new FillTransform();
         Metric metric = new Metric(TEST_SCOPE, TEST_METRIC);
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
         constants.add("-1s");
         constants.add("2s");
         constants.add("100.0");
@@ -117,11 +117,11 @@ public class FillTransformTest {
     public void testFillWithMetricTransformWithInvalidOffsetFormat() {
         Transform fillTransform = new FillTransform();
         Metric metric = new Metric(TEST_SCOPE, TEST_METRIC);
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
         constants.add("1s");
         constants.add("2w");
         constants.add("100.0");
@@ -134,7 +134,7 @@ public class FillTransformTest {
     @Test(expected = IllegalArgumentException.class)
     public void testFillLineTransformWithIncorrectNumOfConstants() {
         Transform fillTransform = new FillTransform();
-        List<String> constants = new ArrayList<String>(5);
+        List<String> constants = new ArrayList<>(5);
 
         fillTransform.transform(null, null, constants);
     }
@@ -142,7 +142,7 @@ public class FillTransformTest {
     @Test(expected = IllegalArgumentException.class)
     public void testFillLineTransformWithInvalidStartFormat() {
         Transform fillTransform = new FillTransform();
-        List<String> constants = new ArrayList<String>(5);
+        List<String> constants = new ArrayList<>(5);
 
         constants.add("1w");
         fillTransform.transform(null, null, constants);
@@ -151,7 +151,7 @@ public class FillTransformTest {
     @Test(expected = IllegalArgumentException.class)
     public void testFillLineTransformWithStartGreaterEqualEnd() {
         Transform fillTransform = new FillTransform();
-        List<String> constants = new ArrayList<String>(5);
+        List<String> constants = new ArrayList<>(5);
 
         constants.add("10s");
         constants.add("2s");
@@ -172,11 +172,11 @@ public class FillTransformTest {
 
         metric.setDatapoints(datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("1s");
         constants.add("1s");
@@ -212,11 +212,11 @@ public class FillTransformTest {
 
         metric.setDatapoints(datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("1s");
         constants.add("0m");
@@ -256,11 +256,11 @@ public class FillTransformTest {
 
         metric.setDatapoints(datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("2s");
         constants.add("-1s");
@@ -296,11 +296,11 @@ public class FillTransformTest {
 
         metric.setDatapoints(datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("3s");
         constants.add("-1s");
@@ -334,11 +334,11 @@ public class FillTransformTest {
 
         metric.setDatapoints(datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("100s");
         constants.add("1s");
@@ -381,12 +381,12 @@ public class FillTransformTest {
 
         metric_2.setDatapoints(datapoints_2);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("1s");
         constants.add("-1s");
@@ -427,11 +427,11 @@ public class FillTransformTest {
 
         metric.setDatapoints(datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("100s");
         constants.add("1s");
@@ -462,11 +462,11 @@ public class FillTransformTest {
 
         metric.setDatapoints(datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("5m");
         constants.add("2s");
@@ -489,7 +489,7 @@ public class FillTransformTest {
     @Test
     public void testFillLineWithIntervalLessThanFillRangeOffsetPositive() {
         Transform fillTransform = new FillTransform();
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("1000");
         constants.add("3000");
@@ -514,7 +514,7 @@ public class FillTransformTest {
     @Test
     public void testFillLineWithIntervalEqualsToFillRangeOffsetNegative() {
         Transform fillTransform = new FillTransform();
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("1000");
         constants.add("3000");
@@ -538,7 +538,7 @@ public class FillTransformTest {
     @Test
     public void testFillLineWithIntervalGreaterThanFillRangeOffsetNegative() {
         Transform fillTransform = new FillTransform();
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("1000");
         constants.add("3000");
@@ -562,7 +562,7 @@ public class FillTransformTest {
     @Test
     public void testFillLineWithFillRangeZeroAfterSnappingOffsetZero() {
         Transform fillTransform = new FillTransform();
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("1000");
         constants.add("3000");
@@ -587,7 +587,7 @@ public class FillTransformTest {
     	long now = System.currentTimeMillis();
     	
     	Transform fillTransform = new FillTransform();
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("-1d");
         constants.add("-12h");
@@ -609,7 +609,7 @@ public class FillTransformTest {
         result.get(0).getDatapoints().keySet().toArray(timestampSet);
         assertEquals(true, timestampSet[0] - expectedStartTimestamp <= 1000L);
         assertEquals(true, timestampSet[timestampSet.length - 1] - expectedEndTimestamp <= 1000L);
-        assertEquals(new HashSet<Double>(Arrays.asList(100.0)), new HashSet<Double>(result.get(0).getDatapoints().values()));
+        assertEquals(new HashSet<>(Arrays.asList(100.0)), new HashSet<>(result.get(0).getDatapoints().values()));
     }
 
     @Test
@@ -617,7 +617,7 @@ public class FillTransformTest {
     	long now = System.currentTimeMillis();
     	
         Transform fillTransform = new FillTransform();
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("-7d");
         constants.add("-0m");
@@ -639,13 +639,13 @@ public class FillTransformTest {
         result.get(0).getDatapoints().keySet().toArray(timestampSet);
         assertEquals(true, timestampSet[0] - expectedStartTimestamp <= 1000L);
         assertEquals(true, timestampSet[timestampSet.length - 1] - expectedEndTimestamp <= 1000L);
-        assertEquals(new HashSet<Double>(Arrays.asList(100.0)), new HashSet<Double>(result.get(0).getDatapoints().values()));
+        assertEquals(new HashSet<>(Arrays.asList(100.0)), new HashSet<>(result.get(0).getDatapoints().values()));
     }
 
     @Test
     public void testEmptyTimestamp() {
         Transform fillTransform = new FillTransform();
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("-1d");
         constants.add("");
@@ -667,7 +667,7 @@ public class FillTransformTest {
         result.get(0).getDatapoints().keySet().toArray(timestampSet);
         assertEquals(true, timestampSet[0] - expectedStartTimestamp <= 1000L);
         assertEquals(true, timestampSet[timestampSet.length - 1] - expectedEndTimestamp <= 1000L);
-        assertEquals(new HashSet<Double>(Arrays.asList(100.0)), new HashSet<Double>(result.get(0).getDatapoints().values()));
+        assertEquals(new HashSet<>(Arrays.asList(100.0)), new HashSet<>(result.get(0).getDatapoints().values()));
     }
     
     @Test

@@ -475,7 +475,7 @@ public class RefocusServiceTest {
             extra_sleep = 100;
             check_period_ms = 20;
 
-            ResultListSupplier responseSupplier = new ResultListSupplier(new ArrayList<StubResult>(),
+            ResultListSupplier responseSupplier = new ResultListSupplier(new ArrayList<>(),
                     make200(timeout, 1),
                     refocusForwarder);
 
@@ -512,7 +512,7 @@ public class RefocusServiceTest {
         RefocusForwarder.Duration d = new RefocusForwarder.Duration();
 
         ResultListSupplier responseSupplier = new ResultListSupplier(
-                new ArrayList<StubResult>(),
+                new ArrayList<>(),
                 makeTooManyRequests(120),
                 refocusForwarder);
 
@@ -549,7 +549,7 @@ public class RefocusServiceTest {
         RefocusForwarder.Duration d = new RefocusForwarder.Duration();
 
         ResultListSupplier responseSupplier = new ResultListSupplier(
-                new ArrayList<StubResult>(),
+                new ArrayList<>(),
                 makeTimedOut(timeout),
                 refocusForwarder);
 
@@ -584,7 +584,7 @@ public class RefocusServiceTest {
         RefocusForwarder.Duration d = new RefocusForwarder.Duration();
 
         ResultListSupplier responseSupplier = new ResultListSupplier(
-                new ArrayList<StubResult>(),
+                new ArrayList<>(),
                 makeWithInterruptedIOException(timeout, -1),
                 refocusForwarder);
 
@@ -619,7 +619,7 @@ public class RefocusServiceTest {
         RefocusForwarder.Duration d = new RefocusForwarder.Duration();
 
         ResultListSupplier responseSupplier = new ResultListSupplier(
-                new ArrayList<StubResult>(),
+                new ArrayList<>(),
                 makeWithIOException(timeout, -1),
                 refocusForwarder);
 
@@ -654,7 +654,7 @@ public class RefocusServiceTest {
         RefocusForwarder.Duration d = new RefocusForwarder.Duration();
 
         ResultListSupplier responseSupplier = new ResultListSupplier(
-                    new ArrayList<StubResult>(),
+                    new ArrayList<>(),
                     makeWithResponseCode(timeout, HttpStatus.SC_UNAUTHORIZED),
                     refocusForwarder);
 
@@ -690,7 +690,7 @@ public class RefocusServiceTest {
         RefocusForwarder.Duration d = new RefocusForwarder.Duration();
 
         ResultListSupplier responseSupplier = new ResultListSupplier(
-                new ArrayList<StubResult>(),
+                new ArrayList<>(),
                 makeWithResponseCode(timeout, HttpStatus.SC_SERVICE_UNAVAILABLE),
                 refocusForwarder);
 
@@ -815,7 +815,7 @@ public class RefocusServiceTest {
             check_period_ms = 20;
 
             ResultListSupplier responseSupplier = new ResultListSupplier(
-                    new ArrayList<StubResult>(),
+                    new ArrayList<>(),
                     make200(timeout, 1),
                     refocusForwarder);
 
@@ -861,7 +861,7 @@ public class RefocusServiceTest {
             check_period_ms = 20;
 
             ResultListSupplier responseSupplier = new ResultListSupplier(
-                    new ArrayList<StubResult>(),
+                    new ArrayList<>(),
                     make200(timeout, 1),
                     refocusForwarder);
 
@@ -911,7 +911,7 @@ public class RefocusServiceTest {
             check_period_ms = 20;
 
             ResultListSupplier responseSupplier = new ResultListSupplier(
-                    new ArrayList<StubResult>(),
+                    new ArrayList<>(),
                     make200(timeout, 1),
                     refocusForwarder);
 

@@ -196,7 +196,7 @@ public class AlertServiceTest{
 	public void testUpdateAlert() {
         String alertName = "alertname-" + TestUtils.createRandomName();
 		Alert expected = new Alert(userService.findAdminUser(), userService.findAdminUser(), alertName, EXPRESSION, "* * * * *");
-		Notification notification = new Notification("notification", expected, "notifier-name", new ArrayList<String>(), 5000L);
+		Notification notification = new Notification("notification", expected, "notifier-name", new ArrayList<>(), 5000L);
 		Trigger trigger = new Trigger(expected, TriggerType.GREATER_THAN, "trigger-name", 0.95, 60000);
 
 		notification.setAlert(expected);
@@ -221,8 +221,8 @@ public class AlertServiceTest{
             String alertName = "alertname-" + TestUtils.createRandomName();
 
 		Alert alert = new Alert(userService.findAdminUser(), userService.findAdminUser(), alertName, EXPRESSION, "* * * * *");
-		Notification notification1 = new Notification("notification1", alert, "notifier-name1", new ArrayList<String>(), 5000L);
-		Notification notification2 = new Notification("notification2", alert, "notifier-name2", new ArrayList<String>(), 5000L);
+		Notification notification1 = new Notification("notification1", alert, "notifier-name1", new ArrayList<>(), 5000L);
+		Notification notification2 = new Notification("notification2", alert, "notifier-name2", new ArrayList<>(), 5000L);
 		Trigger trigger1 = new Trigger(alert, TriggerType.GREATER_THAN_OR_EQ, "trigger-name1", 0.95, 60000);
 		Trigger trigger2 = new Trigger(alert, TriggerType.GREATER_THAN, "trigger-name2", 0.95, 60000);
 
@@ -243,7 +243,7 @@ public class AlertServiceTest{
 		alert = alertService.updateAlert(alert);
 
 		Trigger trigger3 = new Trigger(alert, TriggerType.GREATER_THAN, "trigger-name3", 0.95, 60000);
-		Notification notification3 = new Notification("notification3", alert, "notifier-name3", new ArrayList<String>(), 5000L);
+		Notification notification3 = new Notification("notification3", alert, "notifier-name3", new ArrayList<>(), 5000L);
 
 		notification3.setTriggers(Arrays.asList(new Trigger[] { trigger3 }));
 		alert.setTriggers(Arrays.asList(new Trigger[] { trigger3 }));
@@ -870,9 +870,9 @@ public class AlertServiceTest{
             String alertName = "alertname-" + TestUtils.createRandomName();
 
 		Alert alert = new Alert(userService.findAdminUser(), userService.findAdminUser(), alertName, EXPRESSION, "* * * * *");
-		Notification notification1 = new Notification("notification1", alert, "notifier-name1", new ArrayList<String>(), 5000L);
-		Notification notification2 = new Notification("notification2", alert, "notifier-name2", new ArrayList<String>(), 5000L);
-		Notification notification3 = new Notification("notification3", alert, "notifier-name3", new ArrayList<String>(), 5000L);
+		Notification notification1 = new Notification("notification1", alert, "notifier-name1", new ArrayList<>(), 5000L);
+		Notification notification2 = new Notification("notification2", alert, "notifier-name2", new ArrayList<>(), 5000L);
+		Notification notification3 = new Notification("notification3", alert, "notifier-name3", new ArrayList<>(), 5000L);
 		Trigger trigger1 = new Trigger(alert, TriggerType.GREATER_THAN_OR_EQ, "trigger-name1", 0.95, 60000);
 
 		alert.setNotifications(Arrays.asList(new Notification[] { notification1, notification2, notification3 }));
@@ -884,7 +884,7 @@ public class AlertServiceTest{
 		for (Notification notification : alert.getNotifications()) {
 			notification.setTriggers(null);
 		}
-		alert.setTriggers(new ArrayList<Trigger>());
+		alert.setTriggers(new ArrayList<>());
 		alert = alertService.updateAlert(alert);
 		for (Notification notification : alert.getNotifications()) {
 			assertTrue(notification.getTriggers().isEmpty());
@@ -1308,7 +1308,7 @@ public class AlertServiceTest{
 
 		alertSharedAdmin.setShared(false);
 		alertService.updateAlert(alertSharedAdmin);
-		assertEquals(new ArrayList<Alert>(), alertService.findSharedAlerts(false, admin, null));
+		assertEquals(new ArrayList<>(), alertService.findSharedAlerts(false, admin, null));
 	}
 
 	@Test
@@ -1354,7 +1354,7 @@ public class AlertServiceTest{
 
 		alertSharedAdmin.setShared(false);
 		alertService.updateAlert(alertSharedAdmin);
-		assertEquals(new ArrayList<Alert>(), alertService.findSharedAlerts(true, admin, null));
+		assertEquals(new ArrayList<>(), alertService.findSharedAlerts(true, admin, null));
 	}
 
 	@Test
@@ -1705,7 +1705,7 @@ public class AlertServiceTest{
 
             String alertName1 = "alertname-" + TestUtils.createRandomName();
 		Alert alert = new Alert(userService.findAdminUser(), userService.findAdminUser(), alertName1, EXPRESSION, "* * * * *");
-		Notification notification = new Notification("notification", alert, "notifier-name", new ArrayList<String>(), 5000L);
+		Notification notification = new Notification("notification", alert, "notifier-name", new ArrayList<>(), 5000L);
 		notification.setArticleNumber("an");
 		notification.setSRActionable(true);
 		notification.setProductTag("pT");
@@ -1791,7 +1791,7 @@ public class AlertServiceTest{
 
             String alertName = "alertname-" + TestUtils.createRandomName();
 		Alert expected = new Alert(userService.findAdminUser(), userService.findAdminUser(), alertName, EXPRESSION, "* * * * *");
-		Notification notification = new Notification("notification", expected, "notifier-name", new ArrayList<String>(), 5000L);
+		Notification notification = new Notification("notification", expected, "notifier-name", new ArrayList<>(), 5000L);
 		Trigger trigger = new Trigger(expected, TriggerType.GREATER_THAN, "trigger-name", 0.95, 60000);
 
 		notification.setAlert(expected);
@@ -1865,7 +1865,7 @@ public class AlertServiceTest{
 
 	@Test
 	public void testTriggerInertiaSetting() {
-		ArrayList<String> expressionArray = new ArrayList<String> (Arrays.asList(
+		ArrayList<String> expressionArray = new ArrayList<> (Arrays.asList(
 				"ABOVE(-1d:scope:metric:avg:4h-avg, #0.5#, #avg#)",
 				"LIMIT( -21d:-1d:scope:metricA:avg:4h-avg, -1d:scope:metricB:avg:4h-avg,#1#)",
 				"-20m:-0d:scone.*.*.cs19:acs.DELETERequestProcessingTime_95thPercentile{device=*acs2-1*}:avg",

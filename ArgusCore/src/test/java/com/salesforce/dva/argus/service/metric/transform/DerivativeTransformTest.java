@@ -56,7 +56,7 @@ public class DerivativeTransformTest {
 
     public void transform_shouldReturnEmptyListWhenListIsEmpty() {
         Transform derivativeTransform = new MetricMappingTransform(new DerivativeValueMapping());
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
         List<Metric> result = derivativeTransform.transform(null, metrics);
 
         assertThat(result, equalTo(metrics));
@@ -181,7 +181,7 @@ public class DerivativeTransformTest {
         m1.setDatapoints(dp);
 
         List<Metric> metrics = Arrays.asList(m1);
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         derivativeTransform.transform(null, metrics, constants);
     }
@@ -221,7 +221,7 @@ public class DerivativeTransformTest {
         dp.put(8L, 18.0);
 
         List<Metric> metrics = Arrays.asList(m1);
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
         constants.add("1s");
         List<Metric> results = derivativeTransform.transform(null, metrics, constants);
         HashMap<Long, Double> resultDps = new HashMap<Long, Double>();
@@ -232,7 +232,7 @@ public class DerivativeTransformTest {
 
         assertThat(results, equalTo(metrics));
         
-        constants = new ArrayList<String>();
+        constants = new ArrayList<>();
         constants.add("0s");
         results = derivativeTransform.transform(null, metrics, constants);
         resultDps = new HashMap<Long, Double>();

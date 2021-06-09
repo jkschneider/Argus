@@ -183,7 +183,7 @@ public class AlertDefinitionsCacheRefresherThread extends Thread {
 
     private void addEntrytoCronMap(Alert a) {
         if (alertDefinitionsCache.getAlertsMapByCronEntry().get(a.getCronEntry()) == null) {
-            alertDefinitionsCache.getAlertsMapByCronEntry().put(a.getCronEntry(), new ArrayList<BigInteger>());
+            alertDefinitionsCache.getAlertsMapByCronEntry().put(a.getCronEntry(), new ArrayList<>());
         }
         alertDefinitionsCache.getAlertsMapByCronEntry().get(a.getCronEntry()).add(a.getId());
     }

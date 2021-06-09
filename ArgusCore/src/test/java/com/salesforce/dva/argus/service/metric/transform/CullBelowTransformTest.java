@@ -56,11 +56,11 @@ public class CullBelowTransformTest {
 
         metric.setDatapoints(datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("5");
         constants.add("average");
@@ -78,11 +78,11 @@ public class CullBelowTransformTest {
 
         metric.setDatapoints(datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("100000");
         constants.add("percentile");
@@ -100,11 +100,11 @@ public class CullBelowTransformTest {
 
         metric.setDatapoints(datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("value");
         cullBelowTransform.transform(null, metrics, constants);
@@ -121,11 +121,11 @@ public class CullBelowTransformTest {
 
         metric.setDatapoints(datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("100");
         cullBelowTransform.transform(null, metrics, constants);
@@ -135,7 +135,7 @@ public class CullBelowTransformTest {
     public void testCullBelowTransformWithoutMetrics() {
         Transform cullBelowTransform = new MetricMappingTransform(new CullBelowValueMapping());
         List<Metric> metrics = null;
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("2");
         constants.add("value");
@@ -155,11 +155,11 @@ public class CullBelowTransformTest {
 
         metric_1.setDatapoints(datapoints_1);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("25");
         constants.add("percentile");
@@ -189,11 +189,11 @@ public class CullBelowTransformTest {
 
         metric_1.setDatapoints(datapoints_1);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("1.5");
         constants.add("value");
@@ -222,11 +222,11 @@ public class CullBelowTransformTest {
 
         metric_1.setDatapoints(datapoints_1);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("0.00000001");
         constants.add("percentile");
@@ -256,11 +256,11 @@ public class CullBelowTransformTest {
 
         metric_1.setDatapoints(datapoints_1);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("0");
         constants.add("value");
@@ -290,11 +290,11 @@ public class CullBelowTransformTest {
 
         metric_1.setDatapoints(datapoints_1);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("100");
         constants.add("percentile");
@@ -322,11 +322,11 @@ public class CullBelowTransformTest {
 
         metric_1.setDatapoints(datapoints_1);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("200");
         constants.add("value");
@@ -361,12 +361,12 @@ public class CullBelowTransformTest {
 
         metric_2.setDatapoints(datapoints_2);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("2");
         constants.add("value");
@@ -402,11 +402,11 @@ public class CullBelowTransformTest {
 
         metric_1.setDatapoints(datapoints_1);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("1.5");
         constants.add("value");

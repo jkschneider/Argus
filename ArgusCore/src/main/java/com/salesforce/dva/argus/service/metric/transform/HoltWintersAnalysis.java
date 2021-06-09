@@ -64,10 +64,10 @@ public class HoltWintersAnalysis {
     HoltWintersData _performHoltWintersAnalysis(Map<Long, Double> bootstrappedDps, double alpha, double beta, double gamma, int seasonLength,
         long startTimestamp) {
 
-        List<Double> intercepts = new ArrayList<Double>();
-        List<Double> slopes = new ArrayList<Double>();
-        List<Double> seasonals = new ArrayList<Double>();
-        List<Double> deviations = new ArrayList<Double>();
+        List<Double> intercepts = new ArrayList<>();
+        List<Double> slopes = new ArrayList<>();
+        List<Double> seasonals = new ArrayList<>();
+        List<Double> deviations = new ArrayList<>();
         Map<Long, Double> deviationDatapoints = new TreeMap<>();
         Map<Long, Double> forecastedDatapoints = new TreeMap<>();
         double next_pred = 0.0, prediction = 0.0;

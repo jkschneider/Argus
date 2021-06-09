@@ -96,7 +96,7 @@ public class MovingValueMapping implements ValueMapping {
 
         double sum = 0.0;
         double value = 0.0;
-        List<Double> numberArr = new ArrayList<Double>();
+        List<Double> numberArr = new ArrayList<>();
 
         try {
             sum = sortedDatapoints.get(timestamps[0]);

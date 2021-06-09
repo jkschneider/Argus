@@ -155,7 +155,7 @@ public class MetricUnionTransform implements Transform {
         for (Metric metric : metrics) {
             for (Map.Entry<Long, Double> point : metric.getDatapoints().entrySet()) {
                 if (!collated.containsKey(point.getKey())) {
-                    collated.put(point.getKey(), new ArrayList<Double>());
+                    collated.put(point.getKey(), new ArrayList<>());
                 }
                 collated.get(point.getKey()).add(point.getValue());
             }

@@ -53,7 +53,7 @@ public class Trigger extends Entity {
     private Double secondaryThreshold;
     private Long inertia;
     private BigInteger alertId;
-    private List<BigInteger> notificationIds = new ArrayList<BigInteger>();
+    private List<BigInteger> notificationIds = new ArrayList<>();
 
     //~ Methods **************************************************************************************************************************************
 

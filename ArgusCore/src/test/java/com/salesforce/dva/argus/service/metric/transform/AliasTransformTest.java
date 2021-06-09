@@ -54,7 +54,7 @@ public class AliasTransformTest {
     @Test(expected = UnsupportedOperationException.class)
     public void testAliasTransformWithoutMetrics() {
         Transform aliasTransform = new AliasTransform();
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         aliasTransform.transform(null, metrics);
     }
@@ -62,7 +62,7 @@ public class AliasTransformTest {
     @Test(expected = UnsupportedOperationException.class)
     public void testAliasTransformWithoutConstants() {
         Transform aliasTransform = new AliasTransform();
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         aliasTransform.transform(null, metrics);
     }
@@ -71,7 +71,7 @@ public class AliasTransformTest {
     public void testAliasTransformWithOnlyOneConstant() {
         Transform aliasTransform = new AliasTransform();
         List<Metric> metrics = null;
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add(TEST_ALIAS_LITERAL);
         aliasTransform.transform(null, metrics, constants);
@@ -80,11 +80,11 @@ public class AliasTransformTest {
     @Test(expected = IllegalArgumentException.class)
     public void testAliasTransformWithInvalidType() {
         Transform aliasTransform = new AliasTransform();
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(new Metric(TEST_SCOPE, TEST_METRIC));
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add(TEST_ALIAS_LITERAL);
         constants.add(TEST_BAD_STRING);
@@ -94,11 +94,11 @@ public class AliasTransformTest {
     @Test(expected = IllegalArgumentException.class)
     public void testAliasTransformWithInvalidRegex() {
         Transform aliasTransform = new AliasTransform();
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(new Metric(TEST_SCOPE, TEST_METRIC));
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add(TEST_BAD_STRING);
         constants.add(TEST_ALIAS_REGEX);
@@ -111,13 +111,13 @@ public class AliasTransformTest {
         Metric metric_1 = new Metric(TEST_SCOPE, TEST_METRIC_NAME_1);
         Metric metric_2 = new Metric(TEST_SCOPE, TEST_METRIC_NAME_2);
         Metric metric_3 = new Metric(TEST_SCOPE, TEST_METRIC_NAME_3);
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
         metrics.add(metric_3);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add(TEST_ALIAS_REGEX);
         constants.add(TEST_TYPE_REGEX);
@@ -136,13 +136,13 @@ public class AliasTransformTest {
         Metric metric_1 = new Metric(TEST_SCOPE, TEST_METRIC_NAME_1);
         Metric metric_2 = new Metric(TEST_SCOPE, TEST_METRIC_NAME_2);
         Metric metric_3 = new Metric(TEST_SCOPE, TEST_METRIC_NAME_3);
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
         metrics.add(metric_3);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add(TEST_ALIAS_LITERAL);
         constants.add(TEST_TYPE_LITERAL);
@@ -161,13 +161,13 @@ public class AliasTransformTest {
         Metric metric_1 = new Metric(TEST_SCOPE, TEST_METRIC_NAME_1);
         Metric metric_2 = new Metric(TEST_SCOPE, TEST_METRIC_NAME_2);
         Metric metric_3 = new Metric(TEST_SCOPE, TEST_METRIC_NAME_3);
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
         metrics.add(metric_3);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("m");
         constants.add(TEST_TYPE_LITERAL);
@@ -192,12 +192,12 @@ public class AliasTransformTest {
           Metric metric_1 = new Metric("test_scope1", "test_metric1");
           Metric metric_2 = new Metric("test_scope2", "test_metric2");
           metric_2.setTag("test_key", "test_value"); 
-          List<Metric> metrics = new ArrayList<Metric>();
+          List<Metric> metrics = new ArrayList<>();
 
           metrics.add(metric_1);
           metrics.add(metric_2);
 
-          List<String> constants = new ArrayList<String>();
+          List<String> constants = new ArrayList<>();
           constants.add("new_metric");
           constants.add(TEST_TYPE_LITERAL);
           List<Metric> result = aliasTransform.transform(null, metrics, constants);
@@ -212,10 +212,10 @@ public class AliasTransformTest {
           Metric metric_1 = new Metric(AliasByTagTransform.DEFAULT_SCOPE_NAME, "test_metric1");
           Metric metric_2 = new Metric(AliasByTagTransform.DEFAULT_SCOPE_NAME, "test_metric2");
           metric_2.setTag("test_key", "test_value"); 
-          List<Metric> metrics = new ArrayList<Metric>();
+          List<Metric> metrics = new ArrayList<>();
           metrics.add(metric_1);
           metrics.add(metric_2);
-          List<String> constants = new ArrayList<String>();
+          List<String> constants = new ArrayList<>();
           constants.add("new_metric");
           constants.add(TEST_TYPE_LITERAL);
           List<Metric> result = aliasTransform.transform(null, metrics, constants);

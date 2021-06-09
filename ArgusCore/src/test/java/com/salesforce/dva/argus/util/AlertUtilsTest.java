@@ -105,7 +105,7 @@ public class AlertUtilsTest {
 
 	@Test
 	public void isScopePresentInWhiteListTest() {
-		List<Pattern> scopesSet = new ArrayList<Pattern>(Arrays.asList(new Pattern[] {Pattern.compile("argus.core"), Pattern.compile("kafka.broker.*.ajna_local")}));
+		List<Pattern> scopesSet = new ArrayList<>(Arrays.asList(new Pattern[] {Pattern.compile("argus.core"), Pattern.compile("kafka.broker.*.ajna_local")}));
 		assertTrue(AlertUtils.isPatternPresentInWhiteList("-1d:argus.core:alerts.scheduled:zimsum:15m-sum",scopesSet));
 		assertTrue(AlertUtils.isPatternPresentInWhiteList("COUNT(-75m:-15m:kafka.broker.CHI.NONE.ajna_local:kafka.server.BrokerTopicMetrics.BytesInPerSec.BytesCount{device=*}:avg:1m-avg)", scopesSet));
 		assertFalse(AlertUtils.isPatternPresentInWhiteList("COUNT(-75m:-15m:kafka1.broker.CHI.NONE.ajna_local:kafka.server.BrokerTopicMetrics.BytesInPerSec.BytesCount{device=*}:avg:1m-avg)", scopesSet));
@@ -151,7 +151,7 @@ public class AlertUtilsTest {
 	public void testAbsoluteTimeStampsInExpression() {
 
 		Long alertEnqueueTime = 1418319600000L;
-		ArrayList<String> expressionArray = new ArrayList<String> (Arrays.asList(
+		ArrayList<String> expressionArray = new ArrayList<> (Arrays.asList(
 				"DIFF(COUNT(CULL_BELOW(SHIFT(-25h:-24h:core.IA2.SP1.na70:SFDC_type-Stats-name1-Login-name2-Success.Last1min{device=na70-app*}:avg:10m-max,#24h#),#3#,#value#)),SUM(COUNT(CULL_BELOW(FILL(#-1h#,#-0h#, #10m#, #0m#, #4#),-1h:-0h:core.IA2.SP1.na70:SFDC_type-Stats-name1-Login-name2-Success.Last1min{device=na70-app*}:avg:10m-max,#3#,#value#)),#-1#))",
 				"-20m:-0d:scone.*.*.cs19:acs.DELETERequestProcessingTime_95thPercentile{device=*acs2-1*}:avg",
 				"  SCALE( SUM( DIVIDE( DIFF( DOWNSAMPLE( SUM( CULL_BELOW( DERIVATIVE(-1h:-40m:core.*.*.eu11:SFDC_type-Stats-name1-Search-name2-Client-name3-Query_Count__SolrLive.Count{device=eu11-app*}:sum:1m-max ), #0.001#, #value# ), #union# ), #10m-sum# ), DOWNSAMPLE( SUM( CULL_BELOW( DERIVATIVE(-2h:-40m:core.*.*.eu11:SFDC_type-Stats-name1-Search-name2-Client-name3-Search_Fallbacks__SolrLive.Count{device=eu11-app*}:sum:1m-max ), #0.01#, #value# ), #union# ), #10m-sum# ), #union# ), CULL_BELOW( DOWNSAMPLE( SUM( CULL_BELOW( DERIVATIVE( -40m:core.*.*.eu11:SFDC_type-Stats-name1-Search-name2-Client-name3-Query_Count__SolrLive.Count{device=eu11-app*}:sum:1m-max ), #0.001#, #value# ), #union# ), #10m-sum# ), #1000#, #value# ) ), #-1# ), #-100# ) ",
@@ -167,7 +167,7 @@ public class AlertUtilsTest {
 				"DOWNSAMPLE(-2d:argus.alerts:scheduled{alertId=1429851}:zimsum, #5m-sum#,#-2d#, #-0m#, #0#)"
 		));
 
-		ArrayList<String> expectedOutput = new ArrayList<String> (Arrays.asList(
+		ArrayList<String> expectedOutput = new ArrayList<> (Arrays.asList(
 				"DIFF(COUNT(CULL_BELOW(SHIFT(1418229600000:1418233200000:core.IA2.SP1.na70:SFDC_type-Stats-name1-Login-name2-Success.Last1min{device=na70-app*}:avg:10m-max,#24h#),#3#,#value#)),SUM(COUNT(CULL_BELOW(FILL(#1418316000000#,#1418319600000#,#10m#,#0m#,#4#),1418316000000:1418319600000:core.IA2.SP1.na70:SFDC_type-Stats-name1-Login-name2-Success.Last1min{device=na70-app*}:avg:10m-max,#3#,#value#)),#-1#))",
 				"1418318400000:1418319600000:scone.*.*.cs19:acs.DELETERequestProcessingTime_95thPercentile{device=*acs2-1*}:avg",
 				"SCALE(SUM(DIVIDE(DIFF(DOWNSAMPLE(SUM(CULL_BELOW(DERIVATIVE(1418316000000:1418317200000:core.*.*.eu11:SFDC_type-Stats-name1-Search-name2-Client-name3-Query_Count__SolrLive.Count{device=eu11-app*}:sum:1m-max),#0.001#,#value#),#union#),#10m-sum#),DOWNSAMPLE(SUM(CULL_BELOW(DERIVATIVE(1418312400000:1418317200000:core.*.*.eu11:SFDC_type-Stats-name1-Search-name2-Client-name3-Search_Fallbacks__SolrLive.Count{device=eu11-app*}:sum:1m-max),#0.01#,#value#),#union#),#10m-sum#),#union#),CULL_BELOW(DOWNSAMPLE(SUM(CULL_BELOW(DERIVATIVE(1418317200000:1418319600000:core.*.*.eu11:SFDC_type-Stats-name1-Search-name2-Client-name3-Query_Count__SolrLive.Count{device=eu11-app*}:sum:1m-max),#0.001#,#value#),#union#),#10m-sum#),#1000#,#value#)),#-1#),#-100#)",
@@ -190,7 +190,7 @@ public class AlertUtilsTest {
                                         alertName,
                                         expressionArray.get(0),
                                         "* * * * *");
-		Notification notification = new Notification("notification_name", alert, "notifier_name", new ArrayList<String>(), 23);
+		Notification notification = new Notification("notification_name", alert, "notifier_name", new ArrayList<>(), 23);
 		Trigger trigger = new Trigger(alert, Trigger.TriggerType.GREATER_THAN_OR_EQ, "trigger_name", 2D, 5);
 
 		alert.setNotifications(Arrays.asList(new Notification[] { notification }));
@@ -202,7 +202,7 @@ public class AlertUtilsTest {
 				1418320200000L, 0.0, new Metric("scope", "metric"), history);
 		context.setAlertEnqueueTimestamp(alertEnqueueTime);
 
-		ArrayList<String> actualOutput = new ArrayList<String>();
+		ArrayList<String> actualOutput = new ArrayList<>();
 		for (String currentExpression: expressionArray) {
 			alert.setExpression(currentExpression);
 			String currentOutput = AlertUtils.getExpressionWithAbsoluteStartAndEndTimeStamps(context);

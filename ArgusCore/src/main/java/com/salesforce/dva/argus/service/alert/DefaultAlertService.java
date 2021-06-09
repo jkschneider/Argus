@@ -415,7 +415,7 @@ public class DefaultAlertService extends DefaultJPAService implements AlertServi
 				_whiteListedScopeRegexPatterns = Stream.of(whiteListedScopesProperty.split(",")).map(elem -> Pattern.compile(elem.toLowerCase())).collect(Collectors.toList());
 			} else
 			{
-				_whiteListedScopeRegexPatterns = new ArrayList<Pattern>();
+				_whiteListedScopeRegexPatterns = new ArrayList<>();
 			}
 		}
 
@@ -427,7 +427,7 @@ public class DefaultAlertService extends DefaultJPAService implements AlertServi
 				_whiteListedUserRegexPatterns = Stream.of(whiteListedUsersProperty.split(",")).map(elem -> Pattern.compile(elem.toLowerCase())).collect(Collectors.toList());
 			} else
 			{
-				_whiteListedUserRegexPatterns = new ArrayList<Pattern>();
+				_whiteListedUserRegexPatterns = new ArrayList<>();
 			}
 		}
 	}
@@ -551,7 +551,7 @@ public class DefaultAlertService extends DefaultJPAService implements AlertServi
 			updateAlertStartEvaluationStats(alertEnqueueTimestampsByAlertId, alert, jobStartTime);
 
 			history = new History(History.addDateToMessage(JobStatus.STARTED.getDescription()), HOSTNAME, alert.getId(), JobStatus.STARTED);
-			Set<Trigger> missingDataTriggers = new HashSet<Trigger>();
+			Set<Trigger> missingDataTriggers = new HashSet<>();
 
 			for (Trigger trigger : alert.getTriggers())
 			{
@@ -1625,7 +1625,7 @@ public class DefaultAlertService extends DefaultJPAService implements AlertServi
 		}
 
 
-		List<Metric> metricsAlertScheduled = new ArrayList<Metric>();
+		List<Metric> metricsAlertScheduled = new ArrayList<>();
 
 		_monitorService.modifyCounter(Counter.ALERTS_SCHEDULED_TOTAL, alerts.size(), new HashMap<>());
 		// Write alerts scheduled for evaluation as time series to TSDB
@@ -1773,7 +1773,7 @@ public class DefaultAlertService extends DefaultJPAService implements AlertServi
 		updateRequestContext(alert); // NOTE - stores owner name of current alert in thread local storage  // UGH!
 
 		// Collect missing data triggers
-		Set<Trigger> missingDataTriggers = new HashSet<Trigger>();
+		Set<Trigger> missingDataTriggers = new HashSet<>();
 		for(Trigger trigger : alert.getTriggers()) {
 			if(trigger.getType().equals(TriggerType.NO_DATA)) {
 				missingDataTriggers.add(trigger);
@@ -1871,7 +1871,7 @@ public class DefaultAlertService extends DefaultJPAService implements AlertServi
 				}
 				int numTriggersToEvaluate = triggersToEvaluate.size();
 
-				Set<Trigger> nonEvaluatedTriggers = new HashSet<Trigger>(alert.getTriggers());
+				Set<Trigger> nonEvaluatedTriggers = new HashSet<>(alert.getTriggers());
 				nonEvaluatedTriggers.removeAll(triggersToEvaluate);
 
 				     if (messages.warn(numTriggers == 0,                               () -> "Warning: Alert has no triggers. NO triggers will be evaluated.")) {}
@@ -1970,7 +1970,7 @@ public class DefaultAlertService extends DefaultJPAService implements AlertServi
 
 		public MessageList()
 		{
-			messages = new ArrayList<String>();
+			messages = new ArrayList<>();
 		}
 
 		private boolean condition(boolean test, String type, Supplier<String> s)

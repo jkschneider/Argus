@@ -510,7 +510,7 @@ public class AbstractTSDBService extends DefaultService implements TSDBService {
 
 			for(Map<String, AnnotationWrapper> wrapperMap : wrapperList) {
 
-				List<AnnotationWrapper> wrappers = new ArrayList<AnnotationWrapper>(wrapperMap.values());
+				List<AnnotationWrapper> wrappers = new ArrayList<>(wrapperMap.values());
 
 				try {
 					put(wrappers, endpoint + "/api/annotation/bulk", HttpMethod.POST, CHUNK_SIZE);

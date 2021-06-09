@@ -60,7 +60,7 @@ public class PagerDutyNotifierIT extends AbstractTestIT {
         triggerList.add(t);
         a.setTriggers(triggerList);
 
-        List<String> notificationArgList = new ArrayList<String>();
+        List<String> notificationArgList = new ArrayList<>();
         notificationArgList.add(ROUTING_KEY); // DVA Argus Alerting Subsystem service routing key
         Notification n = new Notification("TEST NOTIF IGNORE", a, "TEST PAGERDUTY NOTIFIER", notificationArgList, 5000L);
         FieldUtils.writeField(n, "id", BigInteger.valueOf(12345L), true);

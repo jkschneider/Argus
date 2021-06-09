@@ -95,7 +95,7 @@ public class TSDBServiceIT extends AbstractTestIT {
     }
 
     private List<Metric> _coalesceMetrics(Map<MetricQuery, List<Metric>> metricsMap) {
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         for (List<Metric> list : metricsMap.values()) {
             metrics.addAll(list);

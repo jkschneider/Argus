@@ -48,8 +48,8 @@ public class MaxTransformTest {
     @Test(expected = UnsupportedOperationException.class)
     public void testMaxTransformWithConstants() {
         Transform maxTransform = new MetricReducerTransform(new MaxValueReducer());
-        List<Metric> metrics = new ArrayList<Metric>();
-        List<String> constants = new ArrayList<String>(1);
+        List<Metric> metrics = new ArrayList<>();
+        List<String> constants = new ArrayList<>(1);
 
         constants.add("5");
         maxTransform.transform(null, metrics, constants);
@@ -86,7 +86,7 @@ public class MaxTransformTest {
 
         metric_2.setDatapoints(datapoints_2);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
@@ -165,7 +165,7 @@ public class MaxTransformTest {
 
         metric_2.setDatapoints(datapoints_2);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
@@ -205,7 +205,7 @@ public class MaxTransformTest {
 
         metric_2.setDatapoints(datapoints_2);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
@@ -245,7 +245,7 @@ public class MaxTransformTest {
 
         metric_2.setDatapoints(datapoints_2);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);

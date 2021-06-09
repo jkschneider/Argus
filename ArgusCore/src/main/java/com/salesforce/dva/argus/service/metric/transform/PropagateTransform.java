@@ -85,7 +85,7 @@ public class PropagateTransform implements Transform {
         }
 
         int newLength = propagateDatapoints.size();
-        List<Long> newTimestamps = new ArrayList<Long>();
+        List<Long> newTimestamps = new ArrayList<>();
         List<Double> newValues = new ArrayList<>();
 
         for (Map.Entry<Long, Double> entry : propagateDatapoints.entrySet()) {

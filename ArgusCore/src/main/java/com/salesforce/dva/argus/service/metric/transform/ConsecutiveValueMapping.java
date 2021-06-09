@@ -68,8 +68,8 @@ public class ConsecutiveValueMapping implements ValueMapping {
         this.connectDistance = getOffsetInSeconds(constants.get(1)) * 1000;
               
         Map<Long, Double> resultMetric = new TreeMap<>();
-        this.keyList = new ArrayList<Long>();
-        this.resultKeyList = new ArrayList<Long>();
+        this.keyList = new ArrayList<>();
+        this.resultKeyList = new ArrayList<>();
 		keyList.addAll(originalDatapoints.keySet());
 		Collections.sort(keyList);
 		

@@ -63,11 +63,11 @@ public class DownsampleTransformTest {
 
         metric.setDatapoints(datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("2k-avg");
         downsampleTransform.transform(null, metrics, constants);
@@ -84,11 +84,11 @@ public class DownsampleTransformTest {
 
         metric.setDatapoints(datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("2s-foobar");
         downsampleTransform.transform(null, metrics, constants);
@@ -105,11 +105,11 @@ public class DownsampleTransformTest {
 
         metric.setDatapoints(datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("-min");
         downsampleTransform.transform(null, metrics, constants);
@@ -126,11 +126,11 @@ public class DownsampleTransformTest {
 
         metric.setDatapoints(datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("6s-");
         downsampleTransform.transform(null, metrics, constants);
@@ -147,11 +147,11 @@ public class DownsampleTransformTest {
 
         metric.setDatapoints(datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("***test");
         downsampleTransform.transform(null, metrics, constants);
@@ -161,7 +161,7 @@ public class DownsampleTransformTest {
     public void testDownsampleTransformWithoutMetrics() {
         Transform downsampleTransform = new DownsampleTransform();
         List<Metric> metrics = null;
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("2");
         constants.add("average");
@@ -188,11 +188,11 @@ public class DownsampleTransformTest {
 
         metric_1.setDatapoints(datapoints_1);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("2s-avg");
 
@@ -230,11 +230,11 @@ public class DownsampleTransformTest {
 
         metric_1.setDatapoints(datapoints_1);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("2s-min");
 
@@ -272,11 +272,11 @@ public class DownsampleTransformTest {
 
         metric_1.setDatapoints(datapoints_1);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("2s-max");
 
@@ -310,11 +310,11 @@ public class DownsampleTransformTest {
 
         metric_1.setDatapoints(datapoints_1);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("1s-sum");
 
@@ -353,11 +353,11 @@ public class DownsampleTransformTest {
 
         metric_1.setDatapoints(datapoints_1);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("2s-sum");
 
@@ -397,11 +397,11 @@ public class DownsampleTransformTest {
 
         metric_1.setDatapoints(datapoints_1);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("3s-dev");
 
@@ -453,12 +453,12 @@ public class DownsampleTransformTest {
 
         metric_2.setDatapoints(datapoints_2);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("2s-avg");
 
@@ -504,11 +504,11 @@ public class DownsampleTransformTest {
 
         metric_1.setDatapoints(datapoints_1);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("100s-avg");
 
@@ -535,11 +535,11 @@ public class DownsampleTransformTest {
 
         metric_1.setDatapoints(datapoints_1);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("2s-avg");
 
@@ -574,11 +574,11 @@ public class DownsampleTransformTest {
 
         metric_1.setDatapoints(datapoints_1);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("2s-min");
 
@@ -609,11 +609,11 @@ public class DownsampleTransformTest {
 
         metric_1.setDatapoints(datapoints_1);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("1h-min");
 
@@ -651,11 +651,11 @@ public class DownsampleTransformTest {
 
         metric_1.setDatapoints(datapoints_1);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("3s-count");
 
@@ -691,11 +691,11 @@ public class DownsampleTransformTest {
 
         metric_1.setDatapoints(datapoints_1);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("3s-count");
 
@@ -718,10 +718,10 @@ public class DownsampleTransformTest {
 
         Metric metric = new Metric(TEST_SCOPE + "1", TEST_METRIC);
         metric.setDatapoints(datapoints);
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
         constants.add("3s-count");
         Map<Long, Double> expected = new HashMap<Long, Double>();
         List<Metric> result = downsampleTransform.transform(null, metrics, constants);
@@ -748,11 +748,11 @@ public class DownsampleTransformTest {
 
         metric_1.setDatapoints(datapoints_1);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("2s-p90");
 
@@ -808,12 +808,12 @@ public class DownsampleTransformTest {
 
         metric_2.setDatapoints(datapoints_2);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
         constants.add("10s-p90");
 
         Map<Long, Double> expected_1 = new HashMap<Long, Double>();
@@ -849,11 +849,11 @@ public class DownsampleTransformTest {
 
         metric_1.setDatapoints(datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("2s-sum");
 
@@ -884,11 +884,11 @@ public class DownsampleTransformTest {
 
         metric_1.setDatapoints(datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("3m-sum");
 
@@ -923,11 +923,11 @@ public class DownsampleTransformTest {
 
         metric_1.setDatapoints(datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("3h-sum");
 
@@ -971,11 +971,11 @@ public class DownsampleTransformTest {
 
         metric_1.setDatapoints(datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("7d-sum");
 
@@ -1011,11 +1011,11 @@ public class DownsampleTransformTest {
 
         metric_1.setDatapoints(datapoints_1);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("1m-sum");
         constants.add("-10m");
@@ -1057,11 +1057,11 @@ public class DownsampleTransformTest {
 
         metric_1.setDatapoints(datapoints_1);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("1m-sum");
         constants.add("0.0");
@@ -1109,7 +1109,7 @@ public class DownsampleTransformTest {
 
         metric_2.setDatapoints(datapoints_2);
 
-        List<Metric> metrics2 = new ArrayList<Metric>();
+        List<Metric> metrics2 = new ArrayList<>();
 
         metrics2.add(metric_2);
         

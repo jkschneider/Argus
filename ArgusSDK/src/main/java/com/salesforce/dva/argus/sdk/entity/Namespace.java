@@ -47,7 +47,7 @@ public class Namespace extends Entity {
     //~ Instance fields ******************************************************************************************************************************
 
     private String qualifier;
-    private Set<String> usernames = new HashSet<String>();
+    private Set<String> usernames = new HashSet<>();
 
     //~ Methods **************************************************************************************************************************************
 

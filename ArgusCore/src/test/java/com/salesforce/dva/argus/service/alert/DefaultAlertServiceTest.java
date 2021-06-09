@@ -147,7 +147,7 @@ public class DefaultAlertServiceTest {
         _setAlertId(alert, "100001");
         Trigger trigger = new Trigger(alert, TriggerType.GREATER_THAN_OR_EQ, "testTrigger", triggerMinValue, inertiaPeriod);
         _setTriggerId(trigger, "100002");
-        Notification notification = new Notification("testNotification", alert, AuditNotifier.class.getName(), new ArrayList<String>(),
+        Notification notification = new Notification("testNotification", alert, AuditNotifier.class.getName(), new ArrayList<>(),
                 cooldownPeriod);
         _setNotificationId(notification, "100003");
 
@@ -185,7 +185,7 @@ public class DefaultAlertServiceTest {
         _setTriggerId(trigger1, "100002");
         Trigger trigger2 = new Trigger(alert, TriggerType.GREATER_THAN_OR_EQ, "testTrigger2", 5, 0);
         _setTriggerId(trigger2, "100003");
-        Notification notification = new Notification("testNotification", alert, AuditNotifier.class.getName(), new ArrayList<String>(), 0);
+        Notification notification = new Notification("testNotification", alert, AuditNotifier.class.getName(), new ArrayList<>(), 0);
         _setNotificationId(notification, "100004");
 
         alert.setTriggers(Arrays.asList(trigger1, trigger2));
@@ -213,7 +213,7 @@ public class DefaultAlertServiceTest {
         _setAlertId(alert, "100001");
         Trigger trigger1 = new Trigger(alert, TriggerType.NO_DATA, "testTrigger1", 10, 1000*60);
         _setTriggerId(trigger1, "100002");
-        Notification notification = new Notification("testNotification", alert, AuditNotifier.class.getName(), new ArrayList<String>(), 0);
+        Notification notification = new Notification("testNotification", alert, AuditNotifier.class.getName(), new ArrayList<>(), 0);
         _setNotificationId(notification, "100004");
 
         alert.setTriggers(Arrays.asList(trigger1));
@@ -248,7 +248,7 @@ public class DefaultAlertServiceTest {
         _setAlertId(alert, "100001");
         Trigger trigger = new Trigger(alert, TriggerType.GREATER_THAN_OR_EQ, "testTrigger", 10, 0);
         _setTriggerId(trigger, "100002");
-        Notification notification = new Notification("testNotification", alert, AuditNotifier.class.getName(), new ArrayList<String>(),
+        Notification notification = new Notification("testNotification", alert, AuditNotifier.class.getName(), new ArrayList<>(),
                 600000);
         _setNotificationId(notification, "100003");
 
@@ -293,7 +293,7 @@ public class DefaultAlertServiceTest {
         _setAlertId(alert, "100001");
         Trigger trigger = new Trigger(alert, TriggerType.GREATER_THAN_OR_EQ, "testTrigger", 10, 0);
         _setTriggerId(trigger, "100002");
-        Notification notification = new Notification("testNotification", alert, AuditNotifier.class.getName(), new ArrayList<String>(), 0);
+        Notification notification = new Notification("testNotification", alert, AuditNotifier.class.getName(), new ArrayList<>(), 0);
         _setNotificationId(notification, "100003");
 
         alert.setTriggers(Arrays.asList(new Trigger[] { trigger }));
@@ -326,7 +326,7 @@ public class DefaultAlertServiceTest {
         _setAlertId(alert, "100001");
         Trigger trigger = new Trigger(alert, TriggerType.GREATER_THAN_OR_EQ, "testTrigger", 10, 0);
         _setTriggerId(trigger, "100002");
-        Notification notification = new Notification("testNotification", alert, AuditNotifier.class.getName(), new ArrayList<String>(), 0);
+        Notification notification = new Notification("testNotification", alert, AuditNotifier.class.getName(), new ArrayList<>(), 0);
         _setNotificationId(notification, "100003");
 
         alert.setTriggers(Arrays.asList(new Trigger[] { trigger }));
@@ -378,7 +378,7 @@ public class DefaultAlertServiceTest {
         _setAlertId(alert, "100001");
         Trigger trigger = new Trigger(alert, TriggerType.GREATER_THAN_OR_EQ, "testTrigger", 10, 0);
         _setTriggerId(trigger, "100002");
-        Notification notification = new Notification("testNotification", alert, RefocusNotifier.class.getName(), new ArrayList<String>(),
+        Notification notification = new Notification("testNotification", alert, RefocusNotifier.class.getName(), new ArrayList<>(),
                 600000); //cool down logic does not apply to Refocus notifier
         _setNotificationId(notification, "100003");
 
@@ -418,7 +418,7 @@ public class DefaultAlertServiceTest {
         _setAlertId(alert, "100001");
         Trigger trigger = new Trigger(alert, TriggerType.GREATER_THAN_OR_EQ, "testTrigger", 10, 0);
         _setTriggerId(trigger, "100002");
-        Notification notification = new Notification("testNotification", alert, RefocusNotifier.class.getName(), new ArrayList<String>(), 0);
+        Notification notification = new Notification("testNotification", alert, RefocusNotifier.class.getName(), new ArrayList<>(), 0);
         _setNotificationId(notification, "100003");
 
         alert.setTriggers(Arrays.asList(new Trigger[] { trigger }));
@@ -477,7 +477,7 @@ public class DefaultAlertServiceTest {
         _setAlertId(alert, "100001");
         Trigger trigger = new Trigger(alert, TriggerType.GREATER_THAN_OR_EQ, "testTrigger", 10, 0);
         _setTriggerId(trigger, "100002");
-        Notification notification = new Notification("testNotification", alert, AuditNotifier.class.getName(), new ArrayList<String>(), 300000);
+        Notification notification = new Notification("testNotification", alert, AuditNotifier.class.getName(), new ArrayList<>(), 300000);
         _setNotificationId(notification, "100003");
 
         alert.setTriggers(Arrays.asList(new Trigger[] { trigger }));
@@ -529,7 +529,7 @@ public class DefaultAlertServiceTest {
         _setAlertId(alert, "100001");
         Trigger trigger = new Trigger(alert, TriggerType.GREATER_THAN_OR_EQ, "testTrigger", 10, 0);
         _setTriggerId(trigger, "100002");
-        Notification notification = new Notification("testNotification", alert, AuditNotifier.class.getName(), new ArrayList<String>(), 300000);
+        Notification notification = new Notification("testNotification", alert, AuditNotifier.class.getName(), new ArrayList<>(), 300000);
         _setNotificationId(notification, "100003");
 
         alert.setTriggers(Arrays.asList(new Trigger[] { trigger }));
@@ -943,7 +943,7 @@ public class DefaultAlertServiceTest {
         _setAlertId(alert, "100001");
         Trigger trigger = new Trigger(alert, TriggerType.NO_DATA, "testTrigger", triggerMinValue, inertiaPeriod);
         _setTriggerId(trigger, "100002");
-        Notification notification = new Notification("testNotification", alert, AuditNotifier.class.getName(), new ArrayList<String>(),
+        Notification notification = new Notification("testNotification", alert, AuditNotifier.class.getName(), new ArrayList<>(),
                 cooldownPeriod);
         _setNotificationId(notification, "100003");
 
@@ -991,7 +991,7 @@ public class DefaultAlertServiceTest {
         _setAlertId(alert, "100001");
         Trigger trigger = new Trigger(alert, TriggerType.GREATER_THAN_OR_EQ, "testTrigger", triggerMinValue, inertiaPeriod);
         _setTriggerId(trigger, "100002");
-        Notification notification = new Notification("testNotification", alert, AuditNotifier.class.getName(), new ArrayList<String>(),
+        Notification notification = new Notification("testNotification", alert, AuditNotifier.class.getName(), new ArrayList<>(),
                 cooldownPeriod);
         _setNotificationId(notification, "100003");
 
@@ -1034,7 +1034,7 @@ public class DefaultAlertServiceTest {
         _setAlertId(alert, "100001");
         Trigger trigger = new Trigger(alert, TriggerType.GREATER_THAN_OR_EQ, "testTrigger", triggerMinValue, inertiaPeriod);
         _setTriggerId(trigger, "100002");
-        Notification notification = new Notification("testNotification", alert, AuditNotifier.class.getName(), new ArrayList<String>(),
+        Notification notification = new Notification("testNotification", alert, AuditNotifier.class.getName(), new ArrayList<>(),
                 cooldownPeriod);
         _setNotificationId(notification, "100003");
 
@@ -1073,7 +1073,7 @@ public class DefaultAlertServiceTest {
         _setAlertId(alert, "100001");
         Trigger trigger = new Trigger(alert, TriggerType.GREATER_THAN_OR_EQ, "testTrigger", triggerMinValue, inertiaPeriod);
         _setTriggerId(trigger, "100002");
-        Notification notification = new Notification("testNotification", alert, AuditNotifier.class.getName(), new ArrayList<String>(),
+        Notification notification = new Notification("testNotification", alert, AuditNotifier.class.getName(), new ArrayList<>(),
                 cooldownPeriod);
         _setNotificationId(notification, "100003");
 
@@ -1115,7 +1115,7 @@ public class DefaultAlertServiceTest {
         _setAlertId(alert, "100001");
         Trigger trigger = new Trigger(alert, TriggerType.GREATER_THAN_OR_EQ, "testTrigger", triggerMinValue, inertiaPeriod);
         _setTriggerId(trigger, "100002");
-        Notification notification = new Notification("testNotification", alert, AuditNotifier.class.getName(), new ArrayList<String>(),
+        Notification notification = new Notification("testNotification", alert, AuditNotifier.class.getName(), new ArrayList<>(),
                 cooldownPeriod);
         _setNotificationId(notification, "100003");
 
@@ -1128,7 +1128,7 @@ public class DefaultAlertServiceTest {
                 Arrays.asList(metric), alert, notification, true);
 
         MetricQueryResult queryResult = new MetricQueryResult();
-        queryResult.setMetricsList(new ArrayList<Metric>(Arrays.asList(metric)));
+        queryResult.setMetricsList(new ArrayList<>(Arrays.asList(metric)));
         queryResult.addTransform(TransformFactory.Function.COUNT);
         queryResult.addInboundMetricQuery(new MetricQuery("COUNT", "metric", null, 0L, 5000L));
         when(_metricServiceMock.getMetrics(anyString(), anyLong())).thenReturn(queryResult);
@@ -1164,7 +1164,7 @@ public class DefaultAlertServiceTest {
         _setAlertId(alert, "100001");
         Trigger trigger = new Trigger(alert, TriggerType.GREATER_THAN_OR_EQ, "testTrigger", triggerMinValue, inertiaPeriod);
         _setTriggerId(trigger, "100002");
-        Notification notification = new Notification("testNotification", alert, AuditNotifier.class.getName(), new ArrayList<String>(),
+        Notification notification = new Notification("testNotification", alert, AuditNotifier.class.getName(), new ArrayList<>(),
                 cooldownPeriod);
         _setNotificationId(notification, "100003");
 
@@ -1177,7 +1177,7 @@ public class DefaultAlertServiceTest {
                 Arrays.asList(metric), alert, notification, false);
 
         MetricQueryResult queryResult = new MetricQueryResult();
-        queryResult.setMetricsList(new ArrayList<Metric>(Arrays.asList(metric)));
+        queryResult.setMetricsList(new ArrayList<>(Arrays.asList(metric)));
         queryResult.addTransform(TransformFactory.Function.COUNT);
         queryResult.addInboundMetricQuery(new MetricQuery("COUNT", "metric", null, 0L, 5000L));
         when(_metricServiceMock.getMetrics(anyString(), anyLong())).thenReturn(queryResult);
@@ -1205,7 +1205,7 @@ public class DefaultAlertServiceTest {
         _setAlertId(alert, "100001");
         Trigger trigger = new Trigger(alert, TriggerType.NO_DATA, "testTrigger", triggerMinValue, inertiaPeriod);
         _setTriggerId(trigger, "100002");
-        Notification notification = new Notification("testNotification", alert, AuditNotifier.class.getName(), new ArrayList<String>(),
+        Notification notification = new Notification("testNotification", alert, AuditNotifier.class.getName(), new ArrayList<>(),
                 cooldownPeriod);
         _setNotificationId(notification, "100003");
 
@@ -1237,7 +1237,7 @@ public class DefaultAlertServiceTest {
         _setAlertId(alert, "100001");
         Trigger trigger = new Trigger(alert, TriggerType.NO_DATA, "testTrigger", triggerMinValue, inertiaPeriod);
         _setTriggerId(trigger, "100002");
-        Notification notification = new Notification("testNotification", alert, AuditNotifier.class.getName(), new ArrayList<String>(),
+        Notification notification = new Notification("testNotification", alert, AuditNotifier.class.getName(), new ArrayList<>(),
                 cooldownPeriod);
         _setNotificationId(notification, "100003");
 
@@ -1277,7 +1277,7 @@ public class DefaultAlertServiceTest {
         _setAlertId(alert, "100001");
         Trigger trigger = new Trigger(alert, TriggerType.GREATER_THAN_OR_EQ, "testTrigger", triggerMinValue, inertiaPeriod);
         _setTriggerId(trigger, "100002");
-        Notification notification = new Notification("testNotification", alert, AuditNotifier.class.getName(), new ArrayList<String>(),
+        Notification notification = new Notification("testNotification", alert, AuditNotifier.class.getName(), new ArrayList<>(),
                 cooldownPeriod);
         _setNotificationId(notification, "100003");
 
@@ -1317,7 +1317,7 @@ public class DefaultAlertServiceTest {
         _setAlertId(alert, "100001");
         Trigger trigger = new Trigger(alert, TriggerType.NO_DATA, "testTrigger", triggerMinValue, inertiaPeriod);
         _setTriggerId(trigger, "100002");
-        Notification notification = new Notification("testNotification", alert, AuditNotifier.class.getName(), new ArrayList<String>(),
+        Notification notification = new Notification("testNotification", alert, AuditNotifier.class.getName(), new ArrayList<>(),
                 cooldownPeriod);
         _setNotificationId(notification, "100003");
 
@@ -1357,7 +1357,7 @@ public class DefaultAlertServiceTest {
         _setAlertId(alert, "100001");
         Trigger trigger = new Trigger(alert, TriggerType.GREATER_THAN_OR_EQ, "testTrigger", triggerMinValue, inertiaPeriod);
         _setTriggerId(trigger, "100002");
-        Notification notification = new Notification("testNotification", alert, AuditNotifier.class.getName(), new ArrayList<String>(),
+        Notification notification = new Notification("testNotification", alert, AuditNotifier.class.getName(), new ArrayList<>(),
                 cooldownPeriod);
         _setNotificationId(notification, "100003");
 
@@ -1370,7 +1370,7 @@ public class DefaultAlertServiceTest {
                 Arrays.asList(metric), alert, notification, true);
 
         MetricQueryResult queryResult = new MetricQueryResult();
-        queryResult.setMetricsList(new ArrayList<Metric>(Arrays.asList(metric)));
+        queryResult.setMetricsList(new ArrayList<>(Arrays.asList(metric)));
         queryResult.addTransform(TransformFactory.Function.COUNT);
         queryResult.addInboundMetricQuery(new MetricQuery("COUNT", "metric", null, 0L, 5000L));
         when(_metricServiceMock.getMetrics(anyString(), anyLong())).thenReturn(queryResult);
@@ -1420,7 +1420,7 @@ public class DefaultAlertServiceTest {
         _setAlertId(alert, "100001");
         Trigger trigger = new Trigger(alert, TriggerType.NO_DATA, "testTrigger", triggerMinValue, inertiaPeriod);
         _setTriggerId(trigger, "100002");
-        Notification notification = new Notification("testNotification", alert, AuditNotifier.class.getName(), new ArrayList<String>(),
+        Notification notification = new Notification("testNotification", alert, AuditNotifier.class.getName(), new ArrayList<>(),
                 cooldownPeriod);
         _setNotificationId(notification, "100003");
 

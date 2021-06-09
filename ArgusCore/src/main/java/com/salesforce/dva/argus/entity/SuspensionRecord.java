@@ -142,7 +142,7 @@ public class SuspensionRecord extends JPAEntity {
         } else {
             SuspensionRecord record = findByUserAndSubsystem(em, user, subSystem);
 
-            records = record == null ? new ArrayList<SuspensionRecord>(0) : Arrays.asList(new SuspensionRecord[] { record });
+            records = record == null ? new ArrayList<>(0) : Arrays.asList(new SuspensionRecord[] { record });
         }
 
         int count = 0;

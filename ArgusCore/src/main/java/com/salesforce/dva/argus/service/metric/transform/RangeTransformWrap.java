@@ -90,8 +90,8 @@ public class RangeTransformWrap implements Transform {
             }
         }
 
-        List<Metric> result = new ArrayList<Metric>();
-        final List<Double> dpNum = new ArrayList<Double>();
+        List<Metric> result = new ArrayList<>();
+        final List<Double> dpNum = new ArrayList<>();
 
         for (Double value : cleanDPs.values()) {
             dpNum.add(value);

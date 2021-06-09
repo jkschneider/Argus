@@ -123,7 +123,7 @@ public class AuditServiceTest {
 
         String hostName = "test@salesforce.com";
         int expectedAuditcount = TestUtils.random.nextInt(10) + 1;
-        List<Audit> expectedResult = new ArrayList<Audit>();
+        List<Audit> expectedResult = new ArrayList<>();
 
         for (int i = 0; i < expectedAuditcount; i++) {
             expectedResult.add(auditService.createAudit(new Audit("Test case execution" + i, hostName, alert)));
@@ -141,7 +141,7 @@ public class AuditServiceTest {
         alert = alertService.updateAlert(alert);
 
         int expectedAuditcount = TestUtils.random.nextInt(10) + 1;
-        List<Audit> expectedResult = new ArrayList<Audit>(auditService.findAll());
+        List<Audit> expectedResult = new ArrayList<>(auditService.findAll());
 
         for (int i = 0; i < expectedAuditcount; i++) {
             expectedResult.add(auditService.createAudit(new Audit("Test case execution" + i, "test@salesforce.com", alert)));
@@ -158,7 +158,7 @@ public class AuditServiceTest {
 
         alert = alertService.updateAlert(alert);
 
-        List<Audit> expectedResult = new ArrayList<Audit>();
+        List<Audit> expectedResult = new ArrayList<>();
         int expectedAuditcount = TestUtils.random.nextInt(10) + 1;
         String message = "test_message";
 

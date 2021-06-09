@@ -50,7 +50,7 @@ public class LogValueMapping implements ValueMapping {
 
     @Override
     public Map<Long, Double> mapping(Map<Long, Double> originalDatapoints) {
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("10");
         return mapping(originalDatapoints, constants);

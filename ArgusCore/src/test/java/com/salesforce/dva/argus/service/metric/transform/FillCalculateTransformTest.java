@@ -66,7 +66,7 @@ public class FillCalculateTransformTest {
 
         metric_1.setDatapoints(input);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
 
@@ -147,7 +147,7 @@ public class FillCalculateTransformTest {
 
         metric_1.setDatapoints(input);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
 
@@ -182,7 +182,7 @@ public class FillCalculateTransformTest {
 
         metric_1.setDatapoints(input);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
 
@@ -217,7 +217,7 @@ public class FillCalculateTransformTest {
 
         metric_1.setDatapoints(input);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
 
@@ -252,7 +252,7 @@ public class FillCalculateTransformTest {
 
         metric_1.setDatapoints(input);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
 

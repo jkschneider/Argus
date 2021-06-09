@@ -121,7 +121,7 @@ public class FillCalculateTransform implements Transform {
 
     @Override
     public List<Metric> transform(QueryContext queryContext, List<Metric> metrics, List<String> constants) {
-        List<Metric> fillCalculateMetricList = new ArrayList<Metric>();
+        List<Metric> fillCalculateMetricList = new ArrayList<>();
 
         SystemAssert.requireArgument(metrics != null, "Cannot transform null or empty metrics!");
         SystemAssert.requireArgument(constants != null && !constants.isEmpty(), "Fill_Calculate Transform needs a type!");
@@ -139,14 +139,14 @@ public class FillCalculateTransform implements Transform {
 
         // If interval and offset are provided, run additional Fill transform on the list of metrics
         if (constants.size() > 1 && constants.size() <= 3) {
-            List<Metric> fillCalculateMetricListWithOffset = new ArrayList<Metric>();
+            List<Metric> fillCalculateMetricListWithOffset = new ArrayList<>();
 
             for (Metric metric : fillCalculateMetricList) {
                 Transform fillTransform = new FillTransform();
                 Double calculateResult = calculateResult(metric, calculationType);
 
                 // replace the 3rd value of constants with results.
-                List<String> newConstants = new ArrayList<String>();
+                List<String> newConstants = new ArrayList<>();
 
                 newConstants.add(constants.get(1));
                 newConstants.add(constants.get(2));

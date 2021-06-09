@@ -158,7 +158,7 @@ public class SchedulingServiceTest {
 
             Trigger trigger = new Trigger(alert, TriggerType.GREATER_THAN_OR_EQ, "testTrigger", 0, 0);
             alert.setTriggers(Arrays.asList(trigger));
-    		Notification notification = new Notification("testNotification", alert, AuditNotifier.class.getName(), new ArrayList<String>(),
+    		Notification notification = new Notification("testNotification", alert, AuditNotifier.class.getName(), new ArrayList<>(),
     				0);
     		alert.setNotifications(Arrays.asList(notification));
 

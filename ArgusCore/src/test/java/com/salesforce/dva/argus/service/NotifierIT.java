@@ -66,7 +66,7 @@ public class NotifierIT extends AbstractTestIT {
     private void __testNotifier(SupportedNotifier supportedNotifier) {
         UserService userService = system.getServiceFactory().getUserService();
         Alert alert = new Alert(userService.findAdminUser(), userService.findAdminUser(), "alert_name", expression, "* * * * *");
-        List<String> list = new ArrayList<String>();
+        List<String> list = new ArrayList<>();
 
         list.add("tvaline@salesforce.com");
 
@@ -100,7 +100,7 @@ public class NotifierIT extends AbstractTestIT {
     public void testGusNotifier() {
         UserService userService = system.getServiceFactory().getUserService();
         Alert alert = new Alert(userService.findAdminUser(), userService.findAdminUser(), "alert_name", expression, "* * * * *");
-        List<String> list = new ArrayList<String>();
+        List<String> list = new ArrayList<>();
         String RzhangGroup = "0F9B00000000FHD";
 
         list.add(RzhangGroup);
@@ -133,7 +133,7 @@ public class NotifierIT extends AbstractTestIT {
         user = userService.updateUser(user);
 
         Alert alert = new Alert(userService.findAdminUser(), user, "warden-" + user.getUserName() + "-DATAPOINTS_PER_HOUR", expression, "* * * * *");
-        Notification notification = new Notification("notification_name", alert, "notifier_name", new ArrayList<String>(), 23);
+        Notification notification = new Notification("notification_name", alert, "notifier_name", new ArrayList<>(), 23);
         Trigger trigger = new Trigger(alert, TriggerType.GREATER_THAN_OR_EQ, "trigger_name", 2D, 5);
 
         alert.setNotifications(Arrays.asList(new Notification[] { notification }));

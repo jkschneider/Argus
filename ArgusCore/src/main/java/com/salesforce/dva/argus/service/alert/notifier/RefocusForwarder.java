@@ -131,7 +131,7 @@ public class RefocusForwarder extends DefaultService implements RefocusService, 
 		this.deliveredCounter = new AtomicInteger(0);
 		this.discardedCounter = new AtomicInteger( 0);
 		this.maxQueueLength   = 0;
-		this.sampleQueue      = new LinkedBlockingQueue<RefocusSample>();
+		this.sampleQueue      = new LinkedBlockingQueue<>();
 		this.last_send_time   = System.currentTimeMillis();
 		this.last_forwarder_status_time = this.last_send_time;
 	}
@@ -215,7 +215,7 @@ public class RefocusForwarder extends DefaultService implements RefocusService, 
 
             // FUTURE - write function to pull samples and filter expired notifications. (expired = nextFireTime + 1.5mins)
             Duration send_duration = new Duration();
-			ArrayList<RefocusSample> samples = new ArrayList<RefocusSample>();
+			ArrayList<RefocusSample> samples = new ArrayList<>();
 			count = this.sampleQueue.drainTo(samples, this.max_samples_to_send);
 
 			_info(MessageFormat.format("RefocusForwarder: got {0} samples to forward.", samples.size()));  // DEBUG

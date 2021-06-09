@@ -86,7 +86,7 @@ public class LogTransformTest {
         m1.setDatapoints(dp);
 
         List<Metric> metrics = Arrays.asList(m1);
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("2");
 
@@ -159,7 +159,7 @@ public class LogTransformTest {
         m2.setDatapoints(dp_2);
 
         List<Metric> metrics = Arrays.asList(m1, m2);
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("2");
 

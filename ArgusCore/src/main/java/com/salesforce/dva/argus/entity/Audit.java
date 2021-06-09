@@ -154,7 +154,7 @@ public class Audit implements Serializable, Identifiable {
             query.setParameter("jpaEntityId", entity.getId());
             return query.getResultList();
         } catch (NoResultException ex) {
-            return new ArrayList<Audit>(0);
+            return new ArrayList<>(0);
         }
     }
 
@@ -176,7 +176,7 @@ public class Audit implements Serializable, Identifiable {
             query.setParameter("hostName", hostName);
             return query.getResultList();
         } catch (NoResultException ex) {
-            return new ArrayList<Audit>(0);
+            return new ArrayList<>(0);
         }
     }
 
@@ -195,7 +195,7 @@ public class Audit implements Serializable, Identifiable {
         try {
             return query.getResultList();
         } catch (NoResultException ex) {
-            return new ArrayList<Audit>(0);
+            return new ArrayList<>(0);
         }
     }
 
@@ -300,7 +300,7 @@ public class Audit implements Serializable, Identifiable {
             query.setParameter("message", "%" + message + "%");
             return query.getResultList();
         } catch (Exception ex) {
-            return new ArrayList<Audit>(0);
+            return new ArrayList<>(0);
         }
     }
 

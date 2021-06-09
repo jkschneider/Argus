@@ -212,7 +212,7 @@ public class AsyncHbaseSchemaService extends AbstractSchemaService {
         requireNotDisposed();
         SystemAssert.requireArgument(query != null, "Metric Schema Record query cannot be null.");
 
-        final List<MetricSchemaRecord> records = new ArrayList<MetricSchemaRecord>(query.getLimit());
+        final List<MetricSchemaRecord> records = new ArrayList<>(query.getLimit());
         final ScanMetadata metadata = _constructScanMetadata(query);
         String namespace = SchemaService.convertToRegex(query.getNamespace());
         String scope = SchemaService.convertToRegex(query.getScope());
@@ -232,7 +232,7 @@ public class AsyncHbaseSchemaService extends AbstractSchemaService {
         _logger.debug("Scan startRow: " + scanStartRow);
         _logger.debug("Scan stopRow: " + metadata.stopRow.toString());
 
-        List<ScanFilter> filters = new ArrayList<ScanFilter>();
+        List<ScanFilter> filters = new ArrayList<>();
 
         filters.add(new RowFilter(CompareOp.EQUAL, new RegexStringComparator(rowKeyRegex)));
         filters.add(new KeyOnlyFilter());
@@ -246,7 +246,7 @@ public class AsyncHbaseSchemaService extends AbstractSchemaService {
         scanner.setFilter(fl);
         scanner.setMaxNumRows(Math.min(query.getLimit(), 10000));
 
-        final Deferred<List<MetricSchemaRecord>> results = new Deferred<List<MetricSchemaRecord>>();
+        final Deferred<List<MetricSchemaRecord>> results = new Deferred<>();
 
         /**
          * Scans HBASE rows.
@@ -356,7 +356,7 @@ public class AsyncHbaseSchemaService extends AbstractSchemaService {
 
         String rowKeyRegex = "^" + _constructRowKey(namespace, scope, metric, tagKey, tagValue, metadata.tableName) + "$";
 
-    	List<ScanFilter> filters = new ArrayList<ScanFilter>();
+    	List<ScanFilter> filters = new ArrayList<>();
     	filters.add(new RowFilter(CompareOp.EQUAL, new RegexStringComparator(rowKeyRegex)));
         filters.add(new KeyOnlyFilter());
         filters.add(new FirstKeyOnlyFilter());
@@ -474,7 +474,7 @@ public class AsyncHbaseSchemaService extends AbstractSchemaService {
         	return _getUniqueFastScan(query, type);
         }
 
-        final Set<String> records = new TreeSet<String>();
+        final Set<String> records = new TreeSet<>();
         final ScanMetadata metadata = _constructScanMetadata(query);
         String namespace = SchemaService.convertToRegex(query.getNamespace());
         String scope = SchemaService.convertToRegex(query.getScope());
@@ -493,7 +493,7 @@ public class AsyncHbaseSchemaService extends AbstractSchemaService {
         _logger.debug("Scan startRow: " + scanStartRow);
         _logger.debug("Scan stopRow: " + Bytes.toString(metadata.stopRow));
 
-        List<ScanFilter> filters = new ArrayList<ScanFilter>();
+        List<ScanFilter> filters = new ArrayList<>();
 
         filters.add(new RowFilter(CompareOp.EQUAL, new RegexStringComparator(rowKeyRegex)));
         filters.add(new KeyOnlyFilter());
@@ -507,7 +507,7 @@ public class AsyncHbaseSchemaService extends AbstractSchemaService {
         scanner.setFilter(filterList);
         scanner.setMaxNumRows(10000);
 
-        final Deferred<List<MetricSchemaRecord>> results = new Deferred<List<MetricSchemaRecord>>();
+        final Deferred<List<MetricSchemaRecord>> results = new Deferred<>();
 
         List<MetricSchemaRecord> listMetricSchemarecords = new ArrayList<>();
 

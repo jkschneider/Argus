@@ -89,7 +89,7 @@ public class PercentileTransformTest {
 
         metric_5.setDatapoints(datapoints_5);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
@@ -97,7 +97,7 @@ public class PercentileTransformTest {
         metrics.add(metric_4);
         metrics.add(metric_5);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("30");
 
@@ -159,7 +159,7 @@ public class PercentileTransformTest {
 
         metric_5.setDatapoints(datapoints_5);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
@@ -167,7 +167,7 @@ public class PercentileTransformTest {
         metrics.add(metric_4);
         metrics.add(metric_5);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("30");
         constants.add("intersect");
@@ -180,7 +180,7 @@ public class PercentileTransformTest {
         assertEquals(result.get(0).getDatapoints().size(), 1);
         assertEquals(expected, result.get(0).getDatapoints());
         
-        constants = new ArrayList<String>();
+        constants = new ArrayList<>();
         constants.add("30");
         expected = new HashMap<Long, Double>();
         expected.put(1000L, 19.0);
@@ -239,7 +239,7 @@ public class PercentileTransformTest {
 
         metric_5.setDatapoints(datapoints_5);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
@@ -247,7 +247,7 @@ public class PercentileTransformTest {
         metrics.add(metric_4);
         metrics.add(metric_5);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("30");
         constants.add("intersect");
@@ -258,7 +258,7 @@ public class PercentileTransformTest {
         assertEquals(result.get(0).getDatapoints().size(), 0);
         assertEquals(expected, result.get(0).getDatapoints());
         
-        constants = new ArrayList<String>();
+        constants = new ArrayList<>();
         constants.add("30");
 
         expected = new HashMap<Long, Double>();
@@ -324,7 +324,7 @@ public class PercentileTransformTest {
 
         metric_5.setDatapoints(datapoints_5);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
@@ -332,7 +332,7 @@ public class PercentileTransformTest {
         metrics.add(metric_4);
         metrics.add(metric_5);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("30");
         constants.add("UNION");
@@ -348,11 +348,11 @@ public class PercentileTransformTest {
     public void testPercentileTransformWithoutConstants() {
         Transform percentileTransform = new MetricReducerOrMappingWithConstantTransform(new PercentileValueReducerOrMapping());
         Metric metric = new Metric(TEST_SCOPE, TEST_METRIC);
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         percentileTransform.transform(null, metrics, constants);
     }
@@ -361,11 +361,11 @@ public class PercentileTransformTest {
     public void testPercentileTransformWithIllegalTimeunit() {
         Transform percentileTransform = new MetricReducerOrMappingWithConstantTransform(new PercentileValueReducerOrMapping());
         Metric metric = new Metric(TEST_SCOPE, TEST_METRIC);
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>(1);
+        List<String> constants = new ArrayList<>(1);
 
         constants.add("90");
         constants.add("3w");
@@ -376,11 +376,11 @@ public class PercentileTransformTest {
     public void testPercentileTransformWithIllegalPercentile() {
         Transform percentileTransform = new MetricReducerOrMappingWithConstantTransform(new PercentileValueReducerOrMapping());
         Metric metric = new Metric(TEST_SCOPE, TEST_METRIC);
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>(1);
+        List<String> constants = new ArrayList<>(1);
 
         constants.add("101");
         constants.add("3s");
@@ -391,7 +391,7 @@ public class PercentileTransformTest {
     public void testPercentileTransformWithoutMetrics() {
         Transform percentileTransform = new MetricReducerOrMappingWithConstantTransform(new PercentileValueReducerOrMapping());
         List<Metric> metrics = null;
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("90");
         constants.add("3h");
@@ -418,11 +418,11 @@ public class PercentileTransformTest {
 
         metric.setDatapoints(datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>(1);
+        List<String> constants = new ArrayList<>(1);
 
         constants.add("90");
         constants.add("3s");
@@ -504,11 +504,11 @@ public class PercentileTransformTest {
 
         metric.setDatapoints(datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>(1);
+        List<String> constants = new ArrayList<>(1);
 
         constants.add("90");
         constants.add("individual");

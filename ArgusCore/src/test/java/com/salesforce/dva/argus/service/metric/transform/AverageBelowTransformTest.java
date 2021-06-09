@@ -67,12 +67,12 @@ public class AverageBelowTransformTest {
 
         above.setDatapoints(datapoints2);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(above);
         metrics.add(below);
 
-        List<String> constants = new ArrayList<String>(1);
+        List<String> constants = new ArrayList<>(1);
 
         constants.add("5");
 

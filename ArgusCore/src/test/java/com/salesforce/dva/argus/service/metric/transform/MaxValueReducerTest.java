@@ -45,7 +45,7 @@ public class MaxValueReducerTest {
     public void reduce_shouldReturnNullWhenZeroValues() {
         MaxValueReducer r = new MaxValueReducer();
 
-        assertThat(r.reduce(new ArrayList<Double>()), is(nullValue()));
+        assertThat(r.reduce(new ArrayList<>()), is(nullValue()));
     }
 
     @Test

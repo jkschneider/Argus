@@ -44,7 +44,7 @@ public class MinValueReducerTest {
     public void reduce_shouldReturnNullWhenZeroValues() {
         MinValueReducer r = new MinValueReducer();
 
-        assertThat(r.reduce(new ArrayList<Double>()), is(nullValue()));
+        assertThat(r.reduce(new ArrayList<>()), is(nullValue()));
     }
 
     @Test

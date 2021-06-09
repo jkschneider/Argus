@@ -74,7 +74,7 @@ public class DownsampleTransform implements Transform {
 	 * @throws  UnsupportedOperationException  If an unknown down sampling type is specified.
 	 */
 	public static Double downsamplerReducer(List<Double> values, String reducerType) {
-		List<Double> operands = new ArrayList<Double>();
+		List<Double> operands = new ArrayList<>();
 
 		for (Double value : values) {
 			if (value == null) {
@@ -220,7 +220,7 @@ public class DownsampleTransform implements Transform {
 			}
 		}else {
 			
-			List<Long> sortedTimeStamps =new ArrayList<Long>(originalDatapoints.keySet());
+			List<Long> sortedTimeStamps =new ArrayList<>(originalDatapoints.keySet());
 			Collections.sort(sortedTimeStamps);
 			long firstTimeStampMinute = 60*1000*(sortedTimeStamps.get(0)/(60*1000));
 			if(firstTimeStampMinute<startTime) {

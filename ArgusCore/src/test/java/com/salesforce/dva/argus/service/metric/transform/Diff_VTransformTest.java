@@ -57,7 +57,7 @@ public class Diff_VTransformTest {
     @Test
     public void testDiff_VTransformWithOnlyOneMetric() {
         Transform diff_vTransform = new MetricZipperTransform(new DiffValueZipper());
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
         Metric metric = new Metric(TEST_SCOPE, TEST_METRIC);
 
         metrics.add(metric);
@@ -68,11 +68,11 @@ public class Diff_VTransformTest {
     @Test(expected = IllegalArgumentException.class)
     public void testDiff_VTransformWithConstants() {
         Transform diff_vTransform = new MetricZipperTransform(new DiffValueZipper());
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
         Metric metric = new Metric(TEST_SCOPE, TEST_METRIC);
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         diff_vTransform.transform(null, metrics, constants);
     }
@@ -88,7 +88,7 @@ public class Diff_VTransformTest {
         metric.setDatapoints(datapoints);
 
         Metric vector = new Metric(TEST_SCOPE, TEST_METRIC);
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
         metrics.add(vector);
@@ -120,7 +120,7 @@ public class Diff_VTransformTest {
 
         vector.setDatapoints(vector_datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
         metrics.add(vector);
@@ -161,7 +161,7 @@ public class Diff_VTransformTest {
 
         vector.setDatapoints(vector_datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
         metrics.add(vector);
@@ -200,7 +200,7 @@ public class Diff_VTransformTest {
 
         vector.setDatapoints(vector_datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
         metrics.add(vector);
@@ -239,7 +239,7 @@ public class Diff_VTransformTest {
 
         vector.setDatapoints(vector_datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
         metrics.add(vector);
@@ -279,7 +279,7 @@ public class Diff_VTransformTest {
 
         vector.setDatapoints(vector_datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
         metrics.add(vector);
@@ -319,7 +319,7 @@ public class Diff_VTransformTest {
 
         vector.setDatapoints(vector_datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
         metrics.add(vector);
@@ -379,7 +379,7 @@ public class Diff_VTransformTest {
 
         vector.setDatapoints(vector_datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
@@ -460,7 +460,7 @@ public class Diff_VTransformTest {
 
         vector.setDatapoints(vector_datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
@@ -540,7 +540,7 @@ public class Diff_VTransformTest {
 
         vector.setDatapoints(vector_datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);

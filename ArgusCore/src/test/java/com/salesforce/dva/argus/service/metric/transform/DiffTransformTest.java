@@ -57,11 +57,11 @@ public class DiffTransformTest {
 
         metric.setDatapoints(datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>(1);
+        List<String> constants = new ArrayList<>(1);
 
         constants.add("5w");
         diffTransform.transform(null, metrics, constants);
@@ -71,7 +71,7 @@ public class DiffTransformTest {
     public void testDiffTransformWithoutMetrics() {
         Transform diffTransform = new MetricReducerOrMappingTransform(new DiffValueReducerOrMapping());
         List<Metric> metrics = null;
-        List<String> constants = new ArrayList<String>(1);
+        List<String> constants = new ArrayList<>(1);
 
         constants.add("5");
         diffTransform.transform(null, metrics, constants);
@@ -90,11 +90,11 @@ public class DiffTransformTest {
 
         metric.setDatapoints(datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>(1);
+        List<String> constants = new ArrayList<>(1);
 
         constants.add("5");
 
@@ -133,12 +133,12 @@ public class DiffTransformTest {
 
         metric_2.setDatapoints(datapoints_2);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
 
-        List<String> constants = new ArrayList<String>(1);
+        List<String> constants = new ArrayList<>(1);
 
         constants.add("5");
 
@@ -166,11 +166,11 @@ public class DiffTransformTest {
     public void testDiffTransformWithTwoConstants() {
         Transform diffTransform = new MetricReducerOrMappingTransform(new DiffValueReducerOrMapping());
         Metric metric = new Metric(TEST_SCOPE, TEST_METRIC);
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("5");
         constants.add("10");
@@ -200,12 +200,12 @@ public class DiffTransformTest {
 
         metric_2.setDatapoints(datapoints_2);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
         Map<Long, Double> expected = new HashMap<Long, Double>();
 
         expected.put(1000L, -9.0);
@@ -241,12 +241,12 @@ public class DiffTransformTest {
 
         metric_2.setDatapoints(datapoints_2);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
         Map<Long, Double> expected = new HashMap<Long, Double>();
         List<Metric> result = diffTransform.transform(null, metrics, constants);
 
@@ -277,12 +277,12 @@ public class DiffTransformTest {
 
         metric_2.setDatapoints(datapoints_2);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
 
-        List<String> constants = new ArrayList<String>(1);
+        List<String> constants = new ArrayList<>(1);
         Map<Long, Double> expected = new HashMap<Long, Double>();
         constants.add("intersect");
         expected.put(3000L, -997.0);
@@ -316,12 +316,12 @@ public class DiffTransformTest {
 
         metric_2.setDatapoints(datapoints_2);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
         constants.add("union");
         
         Map<Long, Double> expected = new HashMap<Long, Double>();

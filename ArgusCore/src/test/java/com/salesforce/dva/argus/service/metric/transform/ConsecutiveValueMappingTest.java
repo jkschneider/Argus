@@ -47,7 +47,7 @@ public class ConsecutiveValueMappingTest {
     public void testconsecutiveTransformWithoutMetrics() {
         Transform transform = new MetricMappingTransform(new ConsecutiveValueMapping());
         List<Metric> metrics = null;
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("1s");
         constants.add("2s");
@@ -58,10 +58,10 @@ public class ConsecutiveValueMappingTest {
     public void testconsecutiveTransformWithoutThreshold() {
         Transform transform = new MetricMappingTransform(new ConsecutiveValueMapping());
         Metric metric_1 = new Metric(TEST_SCOPE, TEST_METRIC);
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
         metrics.add(metric_1);
         
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
         transform.transform(null, metrics, constants);
     }
     
@@ -69,10 +69,10 @@ public class ConsecutiveValueMappingTest {
     public void testconsecutiveTransformWithOnlyOneThreshold() {
         Transform transform = new MetricMappingTransform(new ConsecutiveValueMapping());
         Metric metric_1 = new Metric(TEST_SCOPE, TEST_METRIC);
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
         metrics.add(metric_1);
         
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
         constants.add("1s");
         transform.transform(null, metrics, constants);
     }
@@ -81,10 +81,10 @@ public class ConsecutiveValueMappingTest {
     public void testconsecutiveTransformWithZeroconsecutiveThreshold() {
         Transform transform = new MetricMappingTransform(new ConsecutiveValueMapping());
         Metric metric_1 = new Metric(TEST_SCOPE, TEST_METRIC);
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
         metrics.add(metric_1);
         
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
         constants.add("0");
         constants.add("0");
         transform.transform(null, metrics, constants);
@@ -104,10 +104,10 @@ public class ConsecutiveValueMappingTest {
 
         Metric metric_1 = new Metric(TEST_SCOPE, TEST_METRIC);
         metric_1.setDatapoints(datapoints_1);
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
         metrics.add(metric_1);
         
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
         constants.add("1s");
         constants.add("1s");
         
@@ -137,10 +137,10 @@ public class ConsecutiveValueMappingTest {
 
         Metric metric_1 = new Metric(TEST_SCOPE, TEST_METRIC);
         metric_1.setDatapoints(datapoints_1);
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
         metrics.add(metric_1);
         
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
         constants.add("3s");
         constants.add("1s");
         
@@ -169,10 +169,10 @@ public class ConsecutiveValueMappingTest {
 
         Metric metric_1 = new Metric(TEST_SCOPE, TEST_METRIC);
         metric_1.setDatapoints(datapoints_1);
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
         metrics.add(metric_1);
         
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
         constants.add("10m");
         constants.add("10m");
         
@@ -197,10 +197,10 @@ public class ConsecutiveValueMappingTest {
 
         Metric metric_1 = new Metric(TEST_SCOPE, TEST_METRIC);
         metric_1.setDatapoints(datapoints_1);
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
         metrics.add(metric_1);
         
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
         constants.add("4s");
         constants.add("1s");
         
@@ -217,10 +217,10 @@ public class ConsecutiveValueMappingTest {
         Map<Long, Double> datapoints_1 = new HashMap<Long, Double>();
         Metric metric_1 = new Metric(TEST_SCOPE, TEST_METRIC);
         metric_1.setDatapoints(datapoints_1);
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
         metrics.add(metric_1);
         
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
         constants.add("4s");
         constants.add("1s");
         
@@ -251,11 +251,11 @@ public class ConsecutiveValueMappingTest {
         metric_1.setDatapoints(datapoints_1);
         Metric metric_2 = new Metric(TEST_SCOPE, TEST_METRIC);
         metric_2.setDatapoints(datapoints_2);
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
         metrics.add(metric_1);
         metrics.add(metric_2);
         
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
         constants.add("2s");
         constants.add("1s");
         Map<Long, Double> expected_1 = new TreeMap<Long, Double>();

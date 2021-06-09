@@ -50,7 +50,7 @@ public class RangeTransformTest {
     @Ignore
     public void testRangeTransformWithoutMetrics() {
         Transform rangeTransform = new RangeTransformWrap();
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         rangeTransform.transform(null, metrics);
     }
@@ -68,7 +68,7 @@ public class RangeTransformTest {
 
         metric.setDatapoints(datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
@@ -106,7 +106,7 @@ public class RangeTransformTest {
 
         metric_2.setDatapoints(datapoints_2);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
@@ -146,13 +146,13 @@ public class RangeTransformTest {
 
         metric_2.setDatapoints(datapoints_2);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
 
         Map<Long, Double> expected = new HashMap<Long, Double>();
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
         constants.add("intersect");
         List<Metric> result = rangeTransform.transform(null, metrics, constants);
 
@@ -193,7 +193,7 @@ public class RangeTransformTest {
 
         metric_2.setDatapoints(datapoints_2);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
@@ -201,7 +201,7 @@ public class RangeTransformTest {
         Map<Long, Double> expected = new HashMap<Long, Double>();
 
         expected.put(3000L, 997.0);
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
         constants.add("intersect");
         
         List<Metric> result = rangeTransform.transform(null, metrics, constants);
@@ -233,7 +233,7 @@ public class RangeTransformTest {
 
         metric.setDatapoints(datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
@@ -271,7 +271,7 @@ public class RangeTransformTest {
 
         metric_2.setDatapoints(datapoints_2);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);

@@ -264,8 +264,8 @@ public class MetricReduceTransformTest {
 
     @Test(expected = UnsupportedOperationException.class)
     public void transform_ShouldThrowExceptionWhenConstantSpecified() {
-        List<Metric> metrics = new ArrayList<Metric>();
-        List<String> constants = new ArrayList<String>();
+        List<Metric> metrics = new ArrayList<>();
+        List<String> constants = new ArrayList<>();
 
         new MetricReducerTransform(mockValueReducer).transform(null, metrics, constants);
     }

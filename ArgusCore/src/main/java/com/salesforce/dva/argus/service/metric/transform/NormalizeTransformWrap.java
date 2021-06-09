@@ -92,7 +92,7 @@ public class NormalizeTransformWrap implements Transform {
         Set<Long> unionKeyset = sumUnitMetric.get(0).getDatapoints().keySet();
 
         // create a list of metrics, for every metric it has union of all timestamps
-        List<Metric> paddingMetrics = new ArrayList<Metric>();
+        List<Metric> paddingMetrics = new ArrayList<>();
 
         // Padding Zeros for every datapoints map in every metric
         for (Metric metric : metrics) {

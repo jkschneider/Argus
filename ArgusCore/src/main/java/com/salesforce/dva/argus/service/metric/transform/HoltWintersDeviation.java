@@ -81,7 +81,7 @@ public class HoltWintersDeviation extends HoltWintersAnalysis implements Transfo
         double beta = Double.parseDouble(constants.get(1));
         double gamma = Double.parseDouble(constants.get(2));
         int seasonLength = Integer.parseInt(constants.get(3));
-        List<Metric> result = new ArrayList<Metric>(metrics.size());
+        List<Metric> result = new ArrayList<>(metrics.size());
 
         for (Metric metric : metrics) {
             MetricQuery oneWeekBeforeQuery = new MetricQuery(metric.getQuery());

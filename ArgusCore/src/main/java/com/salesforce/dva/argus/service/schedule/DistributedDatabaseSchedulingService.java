@@ -93,7 +93,7 @@ public class DistributedDatabaseSchedulingService extends DefaultService impleme
 	private final AuditService _auditService;
 	private final MetricService _metricService;
 	private final TSDBService _tsdbService;
-	private final BlockingQueue<Alert> _alertsQueue = new LinkedBlockingQueue<Alert>();
+	private final BlockingQueue<Alert> _alertsQueue = new LinkedBlockingQueue<>();
 	private ExecutorService _schedulerService;
 	private Thread _alertSchedulingThread;
 	private SystemConfiguration _configuration;
@@ -363,7 +363,7 @@ public class DistributedDatabaseSchedulingService extends DefaultService impleme
 	class AlertScheduler implements Runnable{
 		@Override
 		public void run() {
-			List<Alert> alertsBatch = new ArrayList<Alert>();
+			List<Alert> alertsBatch = new ArrayList<>();
 			while(true) {
 				try {
 					Alert alert = _alertsQueue.poll(10, TimeUnit.MILLISECONDS);
@@ -372,7 +372,7 @@ public class DistributedDatabaseSchedulingService extends DefaultService impleme
 					}
 					if((alert==null && alertsBatch.size()>0) || alertsBatch.size()==ALERT_SCHEDULING_BATCH_SIZE) {
 						_alertService.enqueueAlerts(alertsBatch);
-						alertsBatch = new ArrayList<Alert>();
+						alertsBatch = new ArrayList<>();
 						if(alert==null) {
 							_logger.info("Alerts queue is empty");
 						}
@@ -433,7 +433,7 @@ public class DistributedDatabaseSchedulingService extends DefaultService impleme
 				try {
 					long fiveMinuteStartTime = 5*60*1000*(System.currentTimeMillis()/(5*60*1000)) + 5*60*1000;
 					sleep(fiveMinuteStartTime - System.currentTimeMillis());
-					Notification notification1 = new Notification("notification1", alert, "com.salesforce.dva.argus.service.alert.notifier.AuditNotifier", new ArrayList<String>(), 5000L);
+					Notification notification1 = new Notification("notification1", alert, "com.salesforce.dva.argus.service.alert.notifier.AuditNotifier", new ArrayList<>(), 5000L);
 					Trigger trigger1 = new Trigger(alert, TriggerType.GREATER_THAN_OR_EQ, "trigger1", 0.0, 0);
 
 					alert.setNotifications(Arrays.asList(new Notification[] { notification1 }));

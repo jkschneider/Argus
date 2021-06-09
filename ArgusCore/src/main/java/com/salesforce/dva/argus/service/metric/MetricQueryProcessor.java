@@ -157,7 +157,7 @@ public class MetricQueryProcessor {
         {
             logger.warn("Inserting Queries to QueryStore failed due to "+e);
         }
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
         Map<MetricQuery, List<Metric>> metricsMap = _tsdbService.getMetrics(queries);
         for(List<Metric> m : metricsMap.values()) {
             metrics.addAll(m);

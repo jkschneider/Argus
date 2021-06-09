@@ -65,7 +65,7 @@ public class ExcludeTransformTest {
     @Test(expected = UnsupportedOperationException.class)
     public void testExcludeTransformWithoutMetrics() {
         Transform excludeTransform = new ExcludeTransformWrap();
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         excludeTransform.transform(null, metrics);
     }
@@ -73,7 +73,7 @@ public class ExcludeTransformTest {
     @Test(expected = UnsupportedOperationException.class)
     public void testExcludeTransformWithoutConstants() {
         Transform excludeTransform = new ExcludeTransformWrap();
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         excludeTransform.transform(null, metrics);
     }
@@ -81,8 +81,8 @@ public class ExcludeTransformTest {
     @Test(expected = IllegalArgumentException.class)
     public void testExcludeTransformWithMoreThanOneConstant() {
         Transform excludeTransform = new ExcludeTransformWrap();
-        List<Metric> metrics = new ArrayList<Metric>();
-        List<String> constants = new ArrayList<String>();
+        List<Metric> metrics = new ArrayList<>();
+        List<String> constants = new ArrayList<>();
 
         constants.add(TEST_INCLUDE_LITERAL);
         constants.add(TEST_BAD_STRING);
@@ -92,8 +92,8 @@ public class ExcludeTransformTest {
     @Test(expected = IllegalArgumentException.class)
     public void testExcludeTransformWithEmptyRegex() {
         Transform excludeTransform = new ExcludeTransformWrap();
-        List<Metric> metrics = new ArrayList<Metric>();
-        List<String> constants = new ArrayList<String>();
+        List<Metric> metrics = new ArrayList<>();
+        List<String> constants = new ArrayList<>();
 
         constants.add(TEST_INCLUDE_LITERAL);
         constants.add(TEST_BAD_STRING);
@@ -121,13 +121,13 @@ public class ExcludeTransformTest {
         metric_3.setNamespace(TEST_NAMESPACE);
         metric_3.setTags(TEST_TAGS);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
         metrics.add(metric_3);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add(TEST_INCLUDE_REGEX);
 
@@ -158,13 +158,13 @@ public class ExcludeTransformTest {
         metric_3.setNamespace(TEST_NAMESPACE);
         metric_3.setTags(TEST_TAGS);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
         metrics.add(metric_3);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add(TEST_INCLUDE_LITERAL);
 

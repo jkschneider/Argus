@@ -33,7 +33,7 @@ public class SliceTransformTest {
     	
     	actualMetric.setDatapoints(actualDps);
     	
-    	List<String> constants = new ArrayList<String>();
+    	List<String> constants = new ArrayList<>();
     	constants.add("2");
     	constants.add("4");
     	
@@ -79,7 +79,7 @@ public class SliceTransformTest {
     	
     	actualMetric.setDatapoints(actualDps);
     	
-    	List<String> constants = new ArrayList<String>();
+    	List<String> constants = new ArrayList<>();
     	constants.add("start + 2s");
     	constants.add("end-2s");
     	

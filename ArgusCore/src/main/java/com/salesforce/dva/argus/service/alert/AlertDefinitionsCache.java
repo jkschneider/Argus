@@ -106,8 +106,8 @@ public class AlertDefinitionsCache {
     }
 
     public static List<Alert> getEnabledAlertsForMinute(long minuteStartTimeMillis) {
-        List<Alert> enabledAlerts = new ArrayList<Alert>();
-        List<BigInteger> enabledAlertIds = new ArrayList<BigInteger>();
+        List<Alert> enabledAlerts = new ArrayList<>();
+        List<BigInteger> enabledAlertIds = new ArrayList<>();
 
         for (String cronEntry : alertsMapByCronEntry.keySet()) {
             try {

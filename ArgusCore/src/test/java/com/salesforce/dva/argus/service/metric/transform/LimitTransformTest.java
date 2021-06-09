@@ -49,7 +49,7 @@ public class LimitTransformTest {
     public void testLimitTransformWithoutMetrics() {
         Transform limitTransform = new LimitTransform();
         List<Metric> metrics = null;
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("1");
         limitTransform.transform(null, metrics, constants);
@@ -59,11 +59,11 @@ public class LimitTransformTest {
     public void testLimitTransformWithoutConstant() {
         Transform limitTransform = new LimitTransform();
         Metric metric_1 = new Metric(TEST_SCOPE, TEST_METRIC);
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         limitTransform.transform(null, metrics, constants);
     }
@@ -72,11 +72,11 @@ public class LimitTransformTest {
     public void testLimitTransformWithIllegalLimitNumber() {
         Transform limitTransform = new LimitTransform();
         Metric metric_1 = new Metric(TEST_SCOPE, TEST_METRIC);
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("-1");
         limitTransform.transform(null, metrics, constants);
@@ -115,13 +115,13 @@ public class LimitTransformTest {
 
         metric_3.setDatapoints(datapoints_3);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
         metrics.add(metric_3);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("2");
 
@@ -177,13 +177,13 @@ public class LimitTransformTest {
 
         metric_3.setDatapoints(datapoints_3);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
         metrics.add(metric_3);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("3");
 
@@ -246,13 +246,13 @@ public class LimitTransformTest {
 
         metric_3.setDatapoints(datapoints_3);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
         metrics.add(metric_3);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("100");
 

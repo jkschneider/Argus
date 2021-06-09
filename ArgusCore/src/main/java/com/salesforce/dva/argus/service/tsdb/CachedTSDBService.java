@@ -131,9 +131,9 @@ public class CachedTSDBService extends DefaultService implements TSDBService {
     public Map<MetricQuery, List<Metric>> getMetrics(List<MetricQuery> queries) {
         // Copy the metric query since the passed in list may be a
         // fixed length array backed list, and we cannot remove queries from that list.
-        List<MetricQuery> queryList = new ArrayList<MetricQuery>(queries);
+        List<MetricQuery> queryList = new ArrayList<>(queries);
         Map<MetricQuery, List<Metric>> result = new HashMap<MetricQuery, List<Metric>>();
-        List<MetricQuery> filterMetricQueries = new ArrayList<MetricQuery>();
+        List<MetricQuery> filterMetricQueries = new ArrayList<>();
         Map<MetricQuery, MetricQueryTimestamp> map = new HashMap<MetricQuery, MetricQueryTimestamp>();
 
         for (MetricQuery query : queryList) {
@@ -173,7 +173,7 @@ public class CachedTSDBService extends DefaultService implements TSDBService {
 
                 cacheInsertThread.start();
 
-                List<Metric> metrics = new ArrayList<Metric>();
+                List<Metric> metrics = new ArrayList<>();
                 long beforeTime = System.currentTimeMillis();
 
                 for (Metric metric : entry.getValue()) {
@@ -236,12 +236,12 @@ public class CachedTSDBService extends DefaultService implements TSDBService {
                     while (dataPoint.getKey() >= nextTimeStampDay) {
                         tempMetric.setDatapoints(dataPoints);
                         cacheKey = constructMetricQueryKey(previousTimeStampDay, metric, query);
-                        cacheMap.put(cacheKey, new ArrayList<Metric>(Arrays.asList(tempMetric)));
+                        cacheMap.put(cacheKey, new ArrayList<>(Arrays.asList(tempMetric)));
                         cacheKey = constructMetricQueryKey(previousTimeStampDay, query);
                         if (cacheMap.containsKey(cacheKey)) {
                             cacheMap.get(cacheKey).addAll(Arrays.asList(tempMetric));
                         } else {
-                            cacheMap.put(cacheKey, new ArrayList<Metric>(Arrays.asList(tempMetric)));
+                            cacheMap.put(cacheKey, new ArrayList<>(Arrays.asList(tempMetric)));
                         }
                         tempMetric = new Metric(metric);
                         dataPoints = new LinkedHashMap<>();
@@ -254,12 +254,12 @@ public class CachedTSDBService extends DefaultService implements TSDBService {
             while (nextTimeStampDay < getNextDayBoundaryTimeStamp(endTimeStampDay)) {
                 tempMetric.setDatapoints(dataPoints);
                 cacheKey = constructMetricQueryKey(previousTimeStampDay, metric, query);
-                cacheMap.put(cacheKey, new ArrayList<Metric>(Arrays.asList(tempMetric)));
+                cacheMap.put(cacheKey, new ArrayList<>(Arrays.asList(tempMetric)));
                 cacheKey = constructMetricQueryKey(previousTimeStampDay, query);
                 if (cacheMap.containsKey(cacheKey)) {
                     cacheMap.get(cacheKey).addAll(Arrays.asList(tempMetric));
                 } else {
-                    cacheMap.put(cacheKey, new ArrayList<Metric>(Arrays.asList(tempMetric)));
+                    cacheMap.put(cacheKey, new ArrayList<>(Arrays.asList(tempMetric)));
                 }
                 tempMetric = new Metric(metric);
                 dataPoints = new LinkedHashMap<>();
@@ -348,7 +348,7 @@ public class CachedTSDBService extends DefaultService implements TSDBService {
     private List<String> constructMetricQueryKeys(MetricQuery query) {
         Long startTimeQuery = query.getStartTimestamp();
         Long endTimeQuery = query.getEndTimestamp();
-        List<String> metricQueryKeys = new ArrayList<String>();
+        List<String> metricQueryKeys = new ArrayList<>();
 
         for (Long timeStamp = startTimeQuery; timeStamp < endTimeQuery; timeStamp = timeStamp + DURATION_IN_MILLIS) {
             StringBuilder sb = new StringBuilder();
@@ -404,7 +404,7 @@ public class CachedTSDBService extends DefaultService implements TSDBService {
         long afterTime;
 
         for (MetricQuery query : queries) {
-            List<Metric> metricsForThisQuery = new ArrayList<Metric>();
+            List<Metric> metricsForThisQuery = new ArrayList<>();
 
             originalStartTimestamp = query.getStartTimestamp();
             originalEndTimestamp = query.getEndTimestamp();
@@ -419,7 +419,7 @@ public class CachedTSDBService extends DefaultService implements TSDBService {
             try {
             	beforeTime = System.currentTimeMillis();
             	
-                Map<String, List<String>> keyValueMap = _cacheService.getRange(new LinkedHashSet<String>(cacheMetricQueryKeys), 0, -1);
+                Map<String, List<String>> keyValueMap = _cacheService.getRange(new LinkedHashSet<>(cacheMetricQueryKeys), 0, -1);
                 boolean allCachedKeysFound = true;
 
                 if (keyValueMap == null) {

@@ -276,7 +276,7 @@ public class TestUtils {
     }
 
     public static Notification generateNotification(String notificationName, Alert alert, List<Trigger> triggers) {
-        Notification notification = new Notification(notificationName, alert, "notifier-name", new ArrayList<String>(), 5000L);
+        Notification notification = new Notification(notificationName, alert, "notifier-name", new ArrayList<>(), 5000L);
         notification.setAlert(alert);
         notification.setTriggers(triggers);
         return notification;

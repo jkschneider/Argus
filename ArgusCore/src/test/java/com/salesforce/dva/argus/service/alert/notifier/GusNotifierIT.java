@@ -59,7 +59,7 @@ public class GusNotifierIT extends AbstractTestIT {
         triggerList.add(t);
         a.setTriggers(triggerList);
 
-        List<String> notificationArgList = new ArrayList<String>();
+        List<String> notificationArgList = new ArrayList<>();
         notificationArgList.add("0F9B0000000IZlDKAW");
         Notification n = new Notification("TEST NOTIF IGNORE", a, "TEST GUS NOTIFIER", notificationArgList, 5000L);
         a.addNotification(n);

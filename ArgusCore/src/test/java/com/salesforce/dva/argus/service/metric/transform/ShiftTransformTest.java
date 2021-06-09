@@ -49,7 +49,7 @@ public class ShiftTransformTest {
     public void testShiftTransformWithoutMetrics() {
         Transform shiftTransform = new MetricMappingTransform(new ShiftValueMapping());
         List<Metric> metrics = null;
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("1s");
         shiftTransform.transform(null, metrics, constants);
@@ -59,11 +59,11 @@ public class ShiftTransformTest {
     public void testShiftTransformWithoutOffset() {
         Transform shiftTransform = new MetricMappingTransform(new ShiftValueMapping());
         Metric metric_1 = new Metric(TEST_SCOPE, TEST_METRIC);
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         shiftTransform.transform(null, metrics, constants);
     }
@@ -72,11 +72,11 @@ public class ShiftTransformTest {
     public void testShiftTransformWithIllegalOffset() {
         Transform shiftTransform = new MetricMappingTransform(new ShiftValueMapping());
         Metric metric_1 = new Metric(TEST_SCOPE, TEST_METRIC);
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("-w");
         shiftTransform.transform(null, metrics, constants);
@@ -95,11 +95,11 @@ public class ShiftTransformTest {
 
         metric_1.setDatapoints(datapoints_1);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("2s");
 
@@ -148,13 +148,13 @@ public class ShiftTransformTest {
 
         metric_3.setDatapoints(datapoints_3);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
         metrics.add(metric_3);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("-2s");
 
@@ -197,11 +197,11 @@ public class ShiftTransformTest {
 
         metric_1.setDatapoints(datapoints_1);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("+2s");
 

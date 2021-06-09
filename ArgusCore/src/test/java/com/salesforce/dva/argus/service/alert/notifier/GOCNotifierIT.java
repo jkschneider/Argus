@@ -58,7 +58,7 @@ public class GOCNotifierIT extends AbstractTestIT {
         triggerList.add(t);
         a.setTriggers(triggerList);
 
-        List<String> notificationArgList = new ArrayList<String>();
+        List<String> notificationArgList = new ArrayList<>();
         notificationArgList.add("TEST SUBSCRIPTION");
         Notification n = new Notification("TEST NOTIF IGNORE", a, "TEST GOC NOTIFIER", notificationArgList, 5000L);
         n.setSRActionable(false);

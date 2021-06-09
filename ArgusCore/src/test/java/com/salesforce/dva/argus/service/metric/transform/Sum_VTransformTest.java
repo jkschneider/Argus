@@ -57,7 +57,7 @@ public class Sum_VTransformTest {
     @Test
     public void testSum_VTransformWithOnlyOneMetric() {
         Transform sum_vTransform = new MetricZipperTransform(new SumValueZipper());
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
         Metric metric = new Metric(TEST_SCOPE, TEST_METRIC);
 
         metrics.add(metric);
@@ -68,12 +68,12 @@ public class Sum_VTransformTest {
     @Test(expected = IllegalArgumentException.class)
     public void testSum_VTransformWithConstants() {
         Transform sum_vTransform = new MetricZipperTransform(new SumValueZipper());
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
         Metric metric = new Metric(TEST_SCOPE, TEST_METRIC);
 
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         sum_vTransform.transform(null, metrics, constants);
     }
@@ -89,7 +89,7 @@ public class Sum_VTransformTest {
         metric.setDatapoints(datapoints);
 
         Metric vector = new Metric(TEST_SCOPE, TEST_METRIC);
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
         metrics.add(vector);
@@ -120,7 +120,7 @@ public class Sum_VTransformTest {
 
         vector.setDatapoints(vector_datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
         metrics.add(vector);
@@ -161,7 +161,7 @@ public class Sum_VTransformTest {
 
         vector.setDatapoints(vector_datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
         metrics.add(vector);
@@ -200,7 +200,7 @@ public class Sum_VTransformTest {
 
         vector.setDatapoints(vector_datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
         metrics.add(vector);
@@ -239,7 +239,7 @@ public class Sum_VTransformTest {
 
         vector.setDatapoints(vector_datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
         metrics.add(vector);
@@ -279,7 +279,7 @@ public class Sum_VTransformTest {
 
         vector.setDatapoints(vector_datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
         metrics.add(vector);
@@ -319,7 +319,7 @@ public class Sum_VTransformTest {
 
         vector.setDatapoints(vector_datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
         metrics.add(vector);
@@ -379,7 +379,7 @@ public class Sum_VTransformTest {
 
         vector.setDatapoints(vector_datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
@@ -460,7 +460,7 @@ public class Sum_VTransformTest {
 
         vector.setDatapoints(vector_datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
@@ -540,7 +540,7 @@ public class Sum_VTransformTest {
 
         vector.setDatapoints(vector_datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);

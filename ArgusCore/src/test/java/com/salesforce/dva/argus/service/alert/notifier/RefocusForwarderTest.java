@@ -328,7 +328,7 @@ public class RefocusForwarderTest {
 	@Test
 	public void testRefocusForwarderSendSamples() {
 
-        ResultListSupplier responseSupplier = new ResultListSupplier(new ArrayList<StubResult>(),
+        ResultListSupplier responseSupplier = new ResultListSupplier(new ArrayList<>(),
                 make200(10, 1),
                 refocusForwarder);
 
@@ -347,7 +347,7 @@ public class RefocusForwarderTest {
     public void testRefocusForwarderThrottled() {
 
         ResultListSupplier responseSupplier = new ResultListSupplier(
-                new ArrayList<StubResult>(),
+                new ArrayList<>(),
                 makeTooManyRequests(120),
                 refocusForwarder);
 
@@ -367,7 +367,7 @@ public class RefocusForwarderTest {
     public void testRefocusForwarderTimedOut() {
 
         ResultListSupplier responseSupplier = new ResultListSupplier(
-                new ArrayList<StubResult>(),
+                new ArrayList<>(),
                 makeTimedOut(10),
                 refocusForwarder);
 
@@ -388,7 +388,7 @@ public class RefocusForwarderTest {
         RefocusForwarder.Duration d = new RefocusForwarder.Duration();
 
         ResultListSupplier responseSupplier = new ResultListSupplier(
-                new ArrayList<StubResult>(),
+                new ArrayList<>(),
                 makeWithInterruptedIOException(10, -1),
                 refocusForwarder);
 
@@ -407,7 +407,7 @@ public class RefocusForwarderTest {
     public void testRefocusForwarderIOException() {
 
         ResultListSupplier responseSupplier = new ResultListSupplier(
-                new ArrayList<StubResult>(),
+                new ArrayList<>(),
                 makeWithIOException(10, -1),
                 refocusForwarder);
 
@@ -427,7 +427,7 @@ public class RefocusForwarderTest {
     public void testRefocusNoAuth() {
 
         ResultListSupplier responseSupplier = new ResultListSupplier(
-                    new ArrayList<StubResult>(),
+                    new ArrayList<>(),
                     makeWithResponseCode(10, HttpStatus.SC_UNAUTHORIZED),
                     refocusForwarder);
 
@@ -446,7 +446,7 @@ public class RefocusForwarderTest {
     public void testRefocusServiceUnavail() {
 
         ResultListSupplier responseSupplier = new ResultListSupplier(
-                new ArrayList<StubResult>(),
+                new ArrayList<>(),
                 makeWithResponseCode(10, HttpStatus.SC_SERVICE_UNAVAILABLE),
                 refocusForwarder);
 

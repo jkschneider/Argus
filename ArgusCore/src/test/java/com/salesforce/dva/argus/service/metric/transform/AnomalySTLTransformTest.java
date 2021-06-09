@@ -25,9 +25,9 @@ public class AnomalySTLTransformTest {
     @Before
     public void setup() {
         anomalySTLTransform = new AnomalySTLTransform();
-        metrics = new ArrayList<Metric>();
+        metrics = new ArrayList<>();
         metric = new Metric("test-scope", "test-metric");
-        constants = new ArrayList<String>();
+        constants = new ArrayList<>();
         datapoints = new HashMap<Long, Double>();
         expected = new HashMap<Long, Double>();
     }

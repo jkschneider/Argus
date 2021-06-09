@@ -188,7 +188,7 @@ public class Option {
      */
     public static Option[] parseCLArgs(String[] args, Option[] templates) {
         int i = 0;
-        List<Option> options = new ArrayList<Option>(args.length);
+        List<Option> options = new ArrayList<>(args.length);
 
         try {
             while (i < args.length) {

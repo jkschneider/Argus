@@ -48,8 +48,8 @@ public class JoinTransformTest {
     @Test
     public void testJoinTransformWithEmptyMetricsLists() {
         Transform joinTransform = new JoinTransform();
-        List<Metric> metrics_1 = new ArrayList<Metric>();
-        List<Metric> metrics_2 = new ArrayList<Metric>();
+        List<Metric> metrics_1 = new ArrayList<>();
+        List<Metric> metrics_2 = new ArrayList<>();
         List<Metric> result = joinTransform.transform(null, metrics_1, metrics_2);
 
         assertEquals(result.size(), 0);
@@ -58,8 +58,8 @@ public class JoinTransformTest {
     @Test(expected = UnsupportedOperationException.class)
     public void testJoinTransformWithConstant() {
         Transform joinTransform = new JoinTransform();
-        List<Metric> metrics = new ArrayList<Metric>();
-        List<String> constants = new ArrayList<String>();
+        List<Metric> metrics = new ArrayList<>();
+        List<String> constants = new ArrayList<>();
 
         joinTransform.transform(null, metrics, constants);
     }
@@ -97,9 +97,9 @@ public class JoinTransformTest {
 
         metric_3.setDatapoints(datapoints_3);
 
-        final List<Metric> metrics_1 = new ArrayList<Metric>();
-        final List<Metric> metrics_2 = new ArrayList<Metric>();
-        final List<Metric> metrics_3 = new ArrayList<Metric>();
+        final List<Metric> metrics_1 = new ArrayList<>();
+        final List<Metric> metrics_2 = new ArrayList<>();
+        final List<Metric> metrics_3 = new ArrayList<>();
 
         metrics_1.add(metric_1);
         metrics_2.add(metric_2);
@@ -140,7 +140,7 @@ public class JoinTransformTest {
 
         metric_1.setDatapoints(datapoints_1);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
 

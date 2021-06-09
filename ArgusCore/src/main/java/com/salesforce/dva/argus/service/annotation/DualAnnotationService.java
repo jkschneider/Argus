@@ -120,7 +120,7 @@ public class DualAnnotationService extends DefaultService implements AnnotationS
     }
 
     protected List<AnnotationQuery> splitQuery(AnnotationQuery original) {
-        List<AnnotationQuery> queries = new ArrayList<AnnotationQuery>();
+        List<AnnotationQuery> queries = new ArrayList<>();
         queries.add(new AnnotationQuery(original.getScope(),
                 original.getMetric(),
                 original.getTags(),

@@ -47,7 +47,7 @@ public class MetricDistillerTest {
     public void shouldHaveDefaultValuesWhenNoMetrics() {
         MetricDistiller d = new MetricDistiller();
 
-        d.distill(new ArrayList<Metric>());
+        d.distill(new ArrayList<>());
         assertThat(d.getTags().isEmpty(), is(true));
         assertThat(d.getDisplayName(), is(nullValue()));
         assertThat(d.getMetric(), is(nullValue()));

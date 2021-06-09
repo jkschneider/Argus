@@ -192,7 +192,7 @@ public class DefaultConsumer implements Consumer {
     public <T extends Serializable> List<T> dequeueFromBuffer(String topic, Class<T> type, int timeout, int limit) {
         initializeTopic(topic);
 
-        List<T> result = new ArrayList<T>();
+        List<T> result = new ArrayList<>();
         long cutoff = System.currentTimeMillis() + timeout;
         BlockingQueue<String> queue = _topics.get(topic).getMessages();
 
@@ -287,7 +287,7 @@ public class DefaultConsumer implements Consumer {
         for (Map.Entry<String, Topic> entry : _topics.entrySet()) {
             String topicName = entry.getKey();
             Topic topic = entry.getValue();
-            List<String> unflushedMessages = new ArrayList<String>();
+            List<String> unflushedMessages = new ArrayList<>();
 
             if (!topic.getMessages().isEmpty()) {
                 topic.getMessages().drainTo(unflushedMessages);

@@ -138,7 +138,7 @@ public class DefaultTSDBService extends AbstractTSDBService{
             try {
                 List<Metric> m = entry.getValue().get();
                 MetricQuery metricQuery = entry.getKey();
-                Set<String> tagsInQuery = new HashSet<String>();
+                Set<String> tagsInQuery = new HashSet<>();
                 if(metricQuery.getTags()!=null) {
                 	    tagsInQuery = metricQuery.getTags().keySet();
                 }

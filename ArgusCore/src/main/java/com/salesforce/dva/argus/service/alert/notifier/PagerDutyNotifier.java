@@ -553,7 +553,7 @@ public class PagerDutyNotifier extends AuditNotifier {
 
         private final Map<String, Map<String, String>> payload = new HashMap<>();
         private final Map<String, String> customDetailsMap = new HashMap<>();
-        private final List<Map<String, String>> linksList = new LinkedList<Map<String, String>>();
+        private final List<Map<String, String>> linksList = new LinkedList<>();
 
         protected PagerDutyMessage(String routingKey, EventAction eventAction, String dedupKey) {
             this.routingKey = routingKey;

@@ -230,7 +230,7 @@ public class HBaseHistoryService extends DefaultService implements HistoryServic
         scanner.setFilter(filter);
 		
 		final List<History> records = new ArrayList<>(limit);
-        final Deferred<List<History>> results = new Deferred<List<History>>();
+        final Deferred<List<History>> results = new Deferred<>();
 		
         final class ScannerCB implements Callback<Object, ArrayList<ArrayList<KeyValue>>> {
 

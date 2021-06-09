@@ -47,7 +47,7 @@ public class InterpolateTransform implements Transform {
 	@Override
 	public List<Metric> transform(QueryContext queryContext, List<Metric> metrics, List<String> constants) {
 
-		List<Metric> resultMetric = new ArrayList<Metric>();
+		List<Metric> resultMetric = new ArrayList<>();
 
 		if (metrics.isEmpty()) {
 			return resultMetric;

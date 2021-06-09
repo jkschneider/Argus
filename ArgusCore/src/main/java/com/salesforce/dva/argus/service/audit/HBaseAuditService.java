@@ -228,7 +228,7 @@ public class HBaseAuditService extends DefaultService implements AuditService {
         scanner.setFilter(filter);
 		
 		final List<Audit> records = new ArrayList<>(limit);
-        final Deferred<List<Audit>> results = new Deferred<List<Audit>>();
+        final Deferred<List<Audit>> results = new Deferred<>();
 		
         final class ScannerCB implements Callback<Object, ArrayList<ArrayList<KeyValue>>> {
 

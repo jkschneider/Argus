@@ -151,7 +151,7 @@ public class GusNotifier extends AuditNotifier {
         }
         requireArgument(trigger != null, "Trigger in notification context cannot be null.");
 
-        Set<String> to = new HashSet<String>(notification.getSubscriptions());
+        Set<String> to = new HashSet<>(notification.getSubscriptions());
         String feed = generateGusFeed(notification, trigger, context, status);
 
         return postToGus(context.getHistory(),

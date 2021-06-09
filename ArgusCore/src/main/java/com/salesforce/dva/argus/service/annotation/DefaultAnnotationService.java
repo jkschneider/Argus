@@ -96,7 +96,7 @@ public class DefaultAnnotationService extends DefaultService implements Annotati
         requireNotDisposed();
         requireArgument(AnnotationReader.isValid(expression), "Invalid annotation expression: " + expression);
 
-        AnnotationReader<Annotation> reader = new AnnotationReader<Annotation>(_annotationStorageService);
+        AnnotationReader<Annotation> reader = new AnnotationReader<>(_annotationStorageService);
         List<Annotation> annotations = new LinkedList<>();
 
         try {
@@ -115,7 +115,7 @@ public class DefaultAnnotationService extends DefaultService implements Annotati
         requireNotDisposed();
         requireArgument(AnnotationReader.isValid(expression), "Invalid annotation expression: " + expression);
 
-        AnnotationReader<AnnotationQuery> reader = new AnnotationReader<AnnotationQuery>(_annotationStorageService);
+        AnnotationReader<AnnotationQuery> reader = new AnnotationReader<>(_annotationStorageService);
         List<AnnotationQuery> queries = new LinkedList<>();
 
         try {

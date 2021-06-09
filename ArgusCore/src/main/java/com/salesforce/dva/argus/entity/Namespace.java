@@ -98,7 +98,7 @@ public class Namespace extends JPAEntity implements Serializable {
      * @param  creator    The creator of the namespace.  Cannot be null.
      */
     public Namespace(String qualifier, PrincipalUser creator) {
-        this(creator, qualifier, creator, new HashSet<PrincipalUser>());
+        this(creator, qualifier, creator, new HashSet<>());
     }
 
     /**

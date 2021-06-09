@@ -85,7 +85,7 @@ public class GroupTransformWrapUnion implements Transform {
     }
 
     private List<Metric> filterMetrics(List<Metric> metrics, String expr, String type) {
-        List<Metric> matchMetricList = new ArrayList<Metric>();
+        List<Metric> matchMetricList = new ArrayList<>();
 
         for (Metric metric : metrics) {
             String name = metric.getIdentifier();

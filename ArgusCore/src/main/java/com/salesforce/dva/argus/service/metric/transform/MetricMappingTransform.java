@@ -90,7 +90,7 @@ public class MetricMappingTransform implements Transform {
             return metrics;
         }
 
-        List<Metric> newMetricsList = new ArrayList<Metric>();
+        List<Metric> newMetricsList = new ArrayList<>();
 
         for (Metric metric : metrics) {
             Map<Long, Double> cleanDatapoints = cleanDPs(metric.getDatapoints());
@@ -112,7 +112,7 @@ public class MetricMappingTransform implements Transform {
             return metrics;
         }
 
-        List<Metric> newMetricsList = new ArrayList<Metric>();
+        List<Metric> newMetricsList = new ArrayList<>();
 
         for (Metric metric : metrics) {
             Map<Long, Double> cleanDatapoints = cleanDPs(metric.getDatapoints());

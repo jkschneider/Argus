@@ -76,7 +76,7 @@ public class MQServiceTest extends AbstractTestIT {
         int count = 1000;
         String queueName = createRandomName();
         MQService service = system.getServiceFactory().getMQService();
-        List<String> messages = new ArrayList<String>(count);
+        List<String> messages = new ArrayList<>(count);
 
         for (int i = 0; i < count; i++) {
             messages.add("Message " + i);

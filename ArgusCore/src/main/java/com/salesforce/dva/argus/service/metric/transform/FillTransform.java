@@ -112,7 +112,7 @@ public class FillTransform implements Transform {
         }
 
         int newLength = filledDatapoints.size();
-        List<Long> newTimestamps = new ArrayList<Long>();
+        List<Long> newTimestamps = new ArrayList<>();
         List<Double> newValues = new ArrayList<>();
         
         for (Map.Entry<Long, Double> entry : filledDatapoints.entrySet()) {
@@ -192,7 +192,7 @@ public class FillTransform implements Transform {
         }
         metric.setDatapoints(newFilledDatapoints);
 
-        List<Metric> lineMetrics = new ArrayList<Metric>();
+        List<Metric> lineMetrics = new ArrayList<>();
 
         lineMetrics.add(metric);
         return lineMetrics;
@@ -256,7 +256,7 @@ public class FillTransform implements Transform {
         long offsetInSeconds = _parseTimeIntervalInSeconds(offset);
         double value = Double.parseDouble(constants.get(2));
 
-        List<Metric> fillMetricList = new ArrayList<Metric>();
+        List<Metric> fillMetricList = new ArrayList<>();
         for (Metric metric : metrics) {
             Metric newMetric = new Metric(metric);
 

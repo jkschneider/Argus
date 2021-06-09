@@ -61,7 +61,7 @@ public class LimitTransform implements Transform {
         SystemAssert.requireArgument(constants.size() == 1, "Please provide only one limit number");
         SystemAssert.requireArgument(Double.parseDouble(constants.get(0)) >= 0.0, "Please provide a valid limit number");
 
-        List<Metric> result = new ArrayList<Metric>();
+        List<Metric> result = new ArrayList<>();
         Long limit = null;
 
         try {

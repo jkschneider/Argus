@@ -55,7 +55,7 @@ public final class SLF4JTypeListener implements TypeListener {
     public <I> void hear(TypeLiteral<I> type, TypeEncounter<I> encounter) {
         for (Field field : type.getRawType().getDeclaredFields()) {
             if (field.getType().equals(Logger.class) && field.isAnnotationPresent(InjectLogger.class)) {
-                encounter.register(new SLF4JMembersInjector<I>(field));
+                encounter.register(new SLF4JMembersInjector<>(field));
             }
         }
     }

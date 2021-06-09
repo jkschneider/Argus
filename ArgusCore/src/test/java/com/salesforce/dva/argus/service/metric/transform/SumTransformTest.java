@@ -57,11 +57,11 @@ public class SumTransformTest {
 
         metric.setDatapoints(datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>(1);
+        List<String> constants = new ArrayList<>(1);
 
         constants.add("5w");
         sumTransform.transform(null, metrics, constants);
@@ -71,7 +71,7 @@ public class SumTransformTest {
     public void testSumTransformWithoutMetrics() {
         Transform sumTransform = new MetricReducerOrMappingTransform(new SumValueReducerOrMapping());
         List<Metric> metrics = null;
-        List<String> constants = new ArrayList<String>(1);
+        List<String> constants = new ArrayList<>(1);
 
         constants.add("5");
         sumTransform.transform(null, metrics, constants);
@@ -90,11 +90,11 @@ public class SumTransformTest {
 
         metric.setDatapoints(datapoints);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>(1);
+        List<String> constants = new ArrayList<>(1);
 
         constants.add("5");
 
@@ -133,12 +133,12 @@ public class SumTransformTest {
 
         metric_2.setDatapoints(datapoints_2);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
 
-        List<String> constants = new ArrayList<String>(1);
+        List<String> constants = new ArrayList<>(1);
 
         constants.add("5");
 
@@ -166,11 +166,11 @@ public class SumTransformTest {
     public void testSumTransformWithTwoConstants() {
         Transform sumTransform = new MetricReducerOrMappingTransform(new SumValueReducerOrMapping());
         Metric metric = new Metric(TEST_SCOPE, TEST_METRIC);
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
 
         constants.add("5");
         constants.add("10");
@@ -200,12 +200,12 @@ public class SumTransformTest {
 
         metric_2.setDatapoints(datapoints_2);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
         Map<Long, Double> expected = new HashMap<Long, Double>();
 
         expected.put(1000L, 11.0);
@@ -241,12 +241,12 @@ public class SumTransformTest {
 
         metric_2.setDatapoints(datapoints_2);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
         constants.add("intersect");
         Map<Long, Double> expected = new HashMap<Long, Double>();
         List<Metric> result = sumTransform.transform(null, metrics, constants);
@@ -254,7 +254,7 @@ public class SumTransformTest {
         assertEquals(result.get(0).getDatapoints().size(), 0);
         assertEquals(expected, result.get(0).getDatapoints());
         
-        constants = new ArrayList<String>(1);
+        constants = new ArrayList<>(1);
         expected = new HashMap<Long, Double>();
         
         expected.put(1000L, 1.0);
@@ -294,12 +294,12 @@ public class SumTransformTest {
 
         metric_2.setDatapoints(datapoints_2);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
 
-        List<String> constants = new ArrayList<String>(1);
+        List<String> constants = new ArrayList<>(1);
         constants.add("intersect");
         Map<Long, Double> expected = new HashMap<Long, Double>();
 
@@ -310,7 +310,7 @@ public class SumTransformTest {
         assertEquals(result.get(0).getDatapoints().size(), 1);
         assertEquals(expected, result.get(0).getDatapoints());
         
-        constants = new ArrayList<String>(1);
+        constants = new ArrayList<>(1);
         expected = new HashMap<Long, Double>();
         
         expected.put(1000L, 1.0);
@@ -349,12 +349,12 @@ public class SumTransformTest {
 
         metric_2.setDatapoints(datapoints_2);
 
-        List<Metric> metrics = new ArrayList<Metric>();
+        List<Metric> metrics = new ArrayList<>();
 
         metrics.add(metric_1);
         metrics.add(metric_2);
 
-        List<String> constants = new ArrayList<String>();
+        List<String> constants = new ArrayList<>();
         constants.add("union");
         Map<Long, Double> expected = new HashMap<Long, Double>();
         expected.put(100L, 10.0);

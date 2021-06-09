@@ -51,7 +51,7 @@ public class LowestValueFilter implements ValueFilter {
         SystemAssert.requireArgument(extendedSortedMap != null && !extendedSortedMap.isEmpty(), "New map is not constructed successfully!");
         SystemAssert.requireArgument(limit != null && !limit.equals(""), "Limit must be provided!");
 
-        List<Metric> result = new ArrayList<Metric>();
+        List<Metric> result = new ArrayList<>();
 
         for (Metric metric : extendedSortedMap.keySet()) {
             result.add(metric);

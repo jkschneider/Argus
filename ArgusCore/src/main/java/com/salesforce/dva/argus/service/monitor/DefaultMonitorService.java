@@ -716,7 +716,7 @@ public class DefaultMonitorService extends DefaultJPAService implements MonitorS
 				requireArgument(metricExpression != null && triggerType != null && triggerName != null, "Unsupported monitor alert " + alertName);
 
 				Alert alert = new Alert(_adminUser, _adminUser, _constructAlertName(alertName), metricExpression, "0 * * * *");
-				Notification notification = new Notification(NOTIFICATION_NAME, alert, AuditNotifier.class.getName(), new ArrayList<String>(),
+				Notification notification = new Notification(NOTIFICATION_NAME, alert, AuditNotifier.class.getName(), new ArrayList<>(),
 						60000L);
 				Trigger trigger = new Trigger(alert, triggerType, triggerName, triggerThreshold, 0);
 				List<Trigger> triggers = Arrays.asList(new Trigger[] { trigger });

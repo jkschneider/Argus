@@ -91,7 +91,7 @@ public class MetricFilterWithInteralReducerTransform implements Transform {
 	 */
 	public static String internalReducer(Metric metric, String reducerType) {
 		Map<Long, Double> sortedDatapoints = new TreeMap<>();
-		List<Double> operands = new ArrayList<Double>();
+		List<Double> operands = new ArrayList<>();
 
 		if(!reducerType.equals(InternalReducerType.NAME.getName())) {
 			if(metric.getDatapoints()!=null && metric.getDatapoints().size()>0) {
@@ -192,7 +192,7 @@ public class MetricFilterWithInteralReducerTransform implements Transform {
 		String limit = constants.get(0);
 		String type = constants.get(1);
 		Map<Metric, String> extendedSortedMap = createExtendedMap(metrics, type);
-		List<Metric> filteredMetricList = new ArrayList<Metric>();
+		List<Metric> filteredMetricList = new ArrayList<>();
 		if (extendedSortedMap.isEmpty()) {
 			return filteredMetricList;
 		}

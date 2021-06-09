@@ -71,8 +71,8 @@ public class SortTransformWrapAboveAndBelow implements Transform {
         }
 
         // check type and order are valid input
-        Set<String> typeSet = new HashSet<String>(Arrays.asList("maxima", "minima", "name", "dev"));
-        Set<String> orderSet = new HashSet<String>(Arrays.asList(ASC, DES));
+        Set<String> typeSet = new HashSet<>(Arrays.asList("maxima", "minima", "name", "dev"));
+        Set<String> orderSet = new HashSet<>(Arrays.asList(ASC, DES));
 
         if (constants.size() == 2) { // if only two constants provided, it must include type and order
             SystemAssert.requireArgument(typeSet.contains(constants.get(0)), "Please provide a valid type!");

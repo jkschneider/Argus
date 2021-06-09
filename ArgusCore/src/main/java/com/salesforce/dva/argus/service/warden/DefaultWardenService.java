@@ -453,8 +453,8 @@ public class DefaultWardenService extends DefaultJPAService implements WardenSer
         triggers.add(trigger);
 
         List<Notification> notifications = new ArrayList<>();
-        Notification notification = new Notification(NOTIFICATION_NAME, alert, _getWardenNotifierClass(counter), new ArrayList<String>(), 3600000);
-        List<String> metricAnnotationList = new ArrayList<String>();
+        Notification notification = new Notification(NOTIFICATION_NAME, alert, _getWardenNotifierClass(counter), new ArrayList<>(), 3600000);
+        List<String> metricAnnotationList = new ArrayList<>();
 
         String wardenMetricAnnotation = MessageFormat.format("{0}:{1}'{'user={2}'}':sum", Counter.WARDEN_TRIGGERS.getScope(),
             Counter.WARDEN_TRIGGERS.getMetric(), user.getUserName());

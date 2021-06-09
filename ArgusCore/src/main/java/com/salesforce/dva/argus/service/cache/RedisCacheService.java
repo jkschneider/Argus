@@ -168,7 +168,7 @@ public class RedisCacheService extends DefaultService implements CacheService {
 
 	@Override
 	public Set<String> getKeysByPattern(String pattern) {
-		Set<String> keysMatched = new TreeSet<String>();
+		Set<String> keysMatched = new TreeSet<>();
 		Iterator<JedisPool> poolIterator = _jedisClusterClient.getClusterNodes().values().iterator();
 
 		while (poolIterator.hasNext()) {

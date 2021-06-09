@@ -21,7 +21,7 @@ public class QueryContext {
     
     private QueryContext parentContext = null;
     
-    private List<QueryContext> childContexts = new ArrayList<QueryContext>();
+    private List<QueryContext> childContexts = new ArrayList<>();
 
     private TSDBQueryExpression expression = null;
 
